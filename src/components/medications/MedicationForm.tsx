@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
+import { Clock } from 'lucide-react';
 import { format } from 'date-fns';
+import { FREQUENCY_PRESETS, calculateScheduledTimes } from '@/utils/medicationSchedule';
 
 interface MedicationFormData {
   medication_name: string;
@@ -36,11 +39,16 @@ const ROUTES = ['oral', 'iv', 'im', 'sc', 'topical', 'inhalation', 'rectal', 'su
 
 const MedicationForm = ({ initialData, patients, onSubmit, onCancel, isLoading }: MedicationFormProps) => {
   const { t } = useTranslation();
+
+  // Determine if initial frequency matches a preset
+  const initialPreset = FREQUENCY_PRESETS.find(p => p.value === initialData?.frequency);
+  const isInitialCustom = initialData?.frequency && !initialPreset && initialData.frequency !== '';
+
   const [form, setForm] = useState<MedicationFormData>({
     medication_name: initialData?.medication_name || '',
     dose: initialData?.dose || '',
     route: initialData?.route || 'oral',
-    frequency: initialData?.frequency || '',
+    frequency: isInitialCustom ? 'custom' : (initialData?.frequency || ''),
     scheduled_time: initialData?.scheduled_time || '',
     start_date: initialData?.start_date || format(new Date(), 'yyyy-MM-dd'),
     end_date: initialData?.end_date || '',
@@ -48,9 +56,28 @@ const MedicationForm = ({ initialData, patients, onSubmit, onCancel, isLoading }
     patient_id: initialData?.patient_id || '',
   });
 
+  const [customInterval, setCustomInterval] = useState(isInitialCustom ? initialData?.frequency || '' : '');
+
+  // Get the effective interval hours
+  const effectiveFrequency = form.frequency === 'custom' ? customInterval : form.frequency;
+  const intervalHours = useMemo(() => {
+    const num = Number(effectiveFrequency);
+    return !isNaN(num) && num > 0 && num <= 24 ? num : null;
+  }, [effectiveFrequency]);
+
+  // Calculate scheduled times
+  const scheduledTimes = useMemo(() => {
+    if (!form.scheduled_time || !intervalHours) return [];
+    return calculateScheduledTimes(form.scheduled_time, intervalHours);
+  }, [form.scheduled_time, intervalHours]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(form);
+    const submitData = {
+      ...form,
+      frequency: effectiveFrequency,
+    };
+    onSubmit(submitData);
   };
 
   return (
@@ -108,19 +135,25 @@ const MedicationForm = ({ initialData, patients, onSubmit, onCancel, isLoading }
         </div>
       </div>
 
+      {/* Frequency preset + first dose time */}
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-2">
-          <Label htmlFor="frequency">{t('medications.frequency')}</Label>
-          <Input
-            id="frequency"
-            value={form.frequency}
-            onChange={(e) => setForm(prev => ({ ...prev, frequency: e.target.value }))}
-            placeholder={t('medications.frequencyPlaceholder')}
-            required
-          />
+          <Label>{t('medications.frequency')}</Label>
+          <Select value={form.frequency} onValueChange={(v) => setForm(prev => ({ ...prev, frequency: v }))}>
+            <SelectTrigger>
+              <SelectValue placeholder={t('medications.selectFrequency')} />
+            </SelectTrigger>
+            <SelectContent>
+              {FREQUENCY_PRESETS.map(p => (
+                <SelectItem key={p.value} value={p.value}>
+                  {t(`medications.frequencies.${p.value}`, p.label)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="scheduled_time">{t('medications.time')}</Label>
+          <Label htmlFor="scheduled_time">{t('medications.firstDose')}</Label>
           <Input
             id="scheduled_time"
             type="time"
@@ -129,6 +162,40 @@ const MedicationForm = ({ initialData, patients, onSubmit, onCancel, isLoading }
           />
         </div>
       </div>
+
+      {/* Custom interval input */}
+      {form.frequency === 'custom' && (
+        <div className="space-y-2">
+          <Label htmlFor="custom_interval">{t('medications.customInterval')}</Label>
+          <Input
+            id="custom_interval"
+            type="number"
+            min="1"
+            max="24"
+            value={customInterval}
+            onChange={(e) => setCustomInterval(e.target.value)}
+            placeholder={t('medications.customIntervalPlaceholder')}
+            required
+          />
+        </div>
+      )}
+
+      {/* Calculated schedule preview */}
+      {scheduledTimes.length > 1 && (
+        <div className="rounded-lg border border-border bg-muted/50 p-3 space-y-2">
+          <p className="text-xs font-medium text-muted-foreground flex items-center gap-1">
+            <Clock className="h-3 w-3" />
+            {t('medications.calculatedSchedule')}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {scheduledTimes.map((time) => (
+              <Badge key={time} variant="secondary" className="text-sm font-mono">
+                {time}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-2">
