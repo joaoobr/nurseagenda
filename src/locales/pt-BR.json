@@ -49,7 +49,17 @@
     "location": "Local",
     "sector": "Setor",
     "notes": "Observações",
-    "noShifts": "Nenhum plantão agendado"
+    "noShifts": "Nenhum plantão agendado",
+    "shiftTitle": "Título do plantão",
+    "shiftType": "Tipo de plantão",
+    "date": "Data",
+    "startTime": "Início",
+    "endTime": "Fim",
+    "shiftAdded": "Plantão adicionado com sucesso",
+    "shiftUpdated": "Plantão atualizado com sucesso",
+    "shiftDeleted": "Plantão excluído com sucesso",
+    "confirmDelete": "Excluir plantão?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita."
   },
   "patients": {
     "title": "Pacientes",

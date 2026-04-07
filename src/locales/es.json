@@ -49,7 +49,17 @@
     "location": "Ubicación",
     "sector": "Sector",
     "notes": "Notas",
-    "noShifts": "No hay turnos programados"
+    "noShifts": "No hay turnos programados",
+    "shiftTitle": "Título del turno",
+    "shiftType": "Tipo de turno",
+    "date": "Fecha",
+    "startTime": "Inicio",
+    "endTime": "Fin",
+    "shiftAdded": "Turno agregado exitosamente",
+    "shiftUpdated": "Turno actualizado exitosamente",
+    "shiftDeleted": "Turno eliminado exitosamente",
+    "confirmDelete": "¿Eliminar turno?",
+    "confirmDeleteDesc": "Esta acción no se puede deshacer."
   },
   "patients": {
     "title": "Pacientes",

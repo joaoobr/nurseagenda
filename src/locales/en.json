@@ -49,7 +49,17 @@
     "location": "Location",
     "sector": "Sector",
     "notes": "Notes",
-    "noShifts": "No shifts scheduled"
+    "noShifts": "No shifts scheduled",
+    "shiftTitle": "Shift title",
+    "shiftType": "Shift type",
+    "date": "Date",
+    "startTime": "Start time",
+    "endTime": "End time",
+    "shiftAdded": "Shift added successfully",
+    "shiftUpdated": "Shift updated successfully",
+    "shiftDeleted": "Shift deleted successfully",
+    "confirmDelete": "Delete shift?",
+    "confirmDeleteDesc": "This action cannot be undone."
   },
   "patients": {
     "title": "Patients",
