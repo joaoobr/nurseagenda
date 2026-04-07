@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAdminCheck } from '@/hooks/useAdminCheck';
-import { supabase } from '@/integrations/supabase/client';
 import { Navigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { toast } from 'sonner';
-import { Shield, ShieldOff, Trash2, Users, ArrowLeft, Crown, UserCheck, UserX } from 'lucide-react';
+import { Shield, ShieldOff, Trash2, Users, ArrowLeft, Crown, UserCheck, UserX, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 
@@ -24,6 +23,8 @@ interface AdminUser {
   full_name: string;
   specialty: string;
   role: string;
+  subscribed: boolean;
+  subscription_end: string | null;
 }
 
 const Admin = () => {
@@ -38,13 +39,6 @@ const Admin = () => {
     if (!session) return;
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke('admin-users', {
-        body: null,
-        headers: { 'Content-Type': 'application/json' },
-        method: 'GET',
-      });
-
-      // Use fetch directly with query params
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/admin-users?action=list`,
         {
@@ -132,6 +126,23 @@ const Admin = () => {
     }
   };
 
+  const getSubscriptionBadge = (user: AdminUser) => {
+    if (user.subscribed) {
+      return (
+        <Badge className="bg-green-500/10 text-green-600 border-green-200">
+          <CreditCard className="h-3 w-3 mr-1" />{t('admin.subscriber')}
+        </Badge>
+      );
+    }
+    return (
+      <Badge variant="outline" className="text-muted-foreground">
+        <CreditCard className="h-3 w-3 mr-1" />{t('admin.free')}
+      </Badge>
+    );
+  };
+
+  const subscribedCount = users.filter(u => u.subscribed).length;
+
   return (
     <div className="px-4 pt-6 pb-4">
       <div className="flex items-center gap-3 mb-6">
@@ -145,7 +156,7 @@ const Admin = () => {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-4 gap-3 mb-6">
         <Card>
           <CardContent className="p-3 text-center">
             <Users className="h-5 w-5 mx-auto text-primary mb-1" />
@@ -165,6 +176,13 @@ const Admin = () => {
             <UserX className="h-5 w-5 mx-auto text-red-500 mb-1" />
             <p className="text-lg font-bold">{users.filter(u => u.banned).length}</p>
             <p className="text-[10px] text-muted-foreground">{t('admin.blocked')}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-3 text-center">
+            <CreditCard className="h-5 w-5 mx-auto text-emerald-500 mb-1" />
+            <p className="text-lg font-bold">{subscribedCount}</p>
+            <p className="text-[10px] text-muted-foreground">{t('admin.subscribers')}</p>
           </CardContent>
         </Card>
       </div>
@@ -191,6 +209,7 @@ const Admin = () => {
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     {getRoleBadge(u.role)}
+                    {getSubscriptionBadge(u)}
                     {u.banned && (
                       <Badge variant="destructive" className="text-[10px]">
                         {t('admin.bannedLabel')}
@@ -203,6 +222,9 @@ const Admin = () => {
                   {t('admin.registered')}: {format(new Date(u.created_at), 'dd/MM/yyyy')}
                   {u.last_sign_in_at && (
                     <> · {t('admin.lastLogin')}: {format(new Date(u.last_sign_in_at), 'dd/MM/yyyy HH:mm')}</>
+                  )}
+                  {u.subscribed && u.subscription_end && (
+                    <> · {t('admin.subscriptionUntil')}: {format(new Date(u.subscription_end), 'dd/MM/yyyy')}</>
                   )}
                 </div>
 
