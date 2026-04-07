@@ -203,5 +203,15 @@
     "shifts": "Turnos",
     "pendingMeds": "Medicações pendentes",
     "activePatients": "Pacientes ativos"
+  },
+  "profile": {
+    "title": "O Meu Perfil",
+    "personalInfo": "Informações pessoais",
+    "updated": "Perfil atualizado com sucesso",
+    "avatarUploaded": "Foto atualizada",
+    "avatarHint": "Toque para alterar a foto (máx. 2MB)",
+    "fileTooLarge": "Ficheiro demasiado grande (máx. 2MB)",
+    "specialtyPlaceholder": "Ex: UCI, Urgência, Pediatria",
+    "registrationPlaceholder": "Ex: Cédula 123456"
   }
 }

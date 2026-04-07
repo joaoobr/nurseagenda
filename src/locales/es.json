@@ -203,5 +203,15 @@
     "shifts": "Turnos",
     "pendingMeds": "Medicaciones pendientes",
     "activePatients": "Pacientes activos"
+  },
+  "profile": {
+    "title": "Mi Perfil",
+    "personalInfo": "Información personal",
+    "updated": "Perfil actualizado exitosamente",
+    "avatarUploaded": "Foto actualizada",
+    "avatarHint": "Toca para cambiar la foto (máx. 2MB)",
+    "fileTooLarge": "Archivo demasiado grande (máx. 2MB)",
+    "specialtyPlaceholder": "Ej: UCI, Urgencias, Pediatría",
+    "registrationPlaceholder": "Ej: Colegiado 123456"
   }
 }

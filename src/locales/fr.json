@@ -203,5 +203,15 @@
     "shifts": "Gardes",
     "pendingMeds": "Médicaments en attente",
     "activePatients": "Patients actifs"
+  },
+  "profile": {
+    "title": "Mon Profil",
+    "personalInfo": "Informations personnelles",
+    "updated": "Profil mis à jour avec succès",
+    "avatarUploaded": "Photo mise à jour",
+    "avatarHint": "Appuyez pour changer la photo (max 2 Mo)",
+    "fileTooLarge": "Fichier trop volumineux (max 2 Mo)",
+    "specialtyPlaceholder": "Ex : Réanimation, Urgences, Pédiatrie",
+    "registrationPlaceholder": "Ex : IDE 123456"
   }
 }
