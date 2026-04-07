@@ -49,7 +49,17 @@
     "location": "Lieu",
     "sector": "Secteur",
     "notes": "Notes",
-    "noShifts": "Aucune garde programmée"
+    "noShifts": "Aucune garde programmée",
+    "shiftTitle": "Titre de la garde",
+    "shiftType": "Type de garde",
+    "date": "Date",
+    "startTime": "Début",
+    "endTime": "Fin",
+    "shiftAdded": "Garde ajoutée avec succès",
+    "shiftUpdated": "Garde mise à jour avec succès",
+    "shiftDeleted": "Garde supprimée avec succès",
+    "confirmDelete": "Supprimer la garde ?",
+    "confirmDeleteDesc": "Cette action est irréversible."
   },
   "patients": {
     "title": "Patients",
