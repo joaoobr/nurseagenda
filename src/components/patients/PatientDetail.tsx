@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Pencil, Trash2, User, Phone, Droplets, AlertTriangle, FileText } from 'lucide-react';
+import { ArrowLeft, Pencil, Trash2, User, Phone, Droplets, AlertTriangle, FileText, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
@@ -134,6 +134,15 @@ const PatientDetail = ({ patient, onBack, onEdit, onDelete }: PatientDetailProps
         >
           <FileText className="h-4 w-4" />
           {t('nursingNotes.title')}
+        </Button>
+
+        <Button
+          variant="outline"
+          className="w-full gap-2"
+          onClick={() => navigate(`/vital-signs?patient=${patient.id}`)}
+        >
+          <Activity className="h-4 w-4" />
+          {t('vitalSigns.title')}
         </Button>
       </div>
     </div>

@@ -241,5 +241,20 @@
       "incident": "Intercorrência",
       "observation": "Observação"
     }
+  },
+  "vitalSigns": {
+    "title": "Sinais Vitais",
+    "record": "Registar",
+    "charts": "Gráficos",
+    "history": "Histórico",
+    "systolic": "Sistólica",
+    "diastolic": "Diastólica",
+    "selectPatientFirst": "Selecione um paciente para ver os sinais vitais",
+    "noRecords": "Nenhum registo de sinais vitais",
+    "needMoreData": "Registe pelo menos 2 medições para ver os gráficos",
+    "recorded": "Sinais vitais registados",
+    "deleted": "Registo eliminado",
+    "confirmDelete": "Eliminar registo?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita."
   }
 }

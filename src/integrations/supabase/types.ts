@@ -321,6 +321,65 @@ export type Database = {
         }
         Relationships: []
       }
+      vital_signs: {
+        Row: {
+          blood_glucose: number | null
+          created_at: string
+          diastolic_bp: number | null
+          heart_rate: number | null
+          id: string
+          notes: string | null
+          oxygen_saturation: number | null
+          patient_id: string
+          recorded_at: string
+          respiratory_rate: number | null
+          systolic_bp: number | null
+          temperature: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          blood_glucose?: number | null
+          created_at?: string
+          diastolic_bp?: number | null
+          heart_rate?: number | null
+          id?: string
+          notes?: string | null
+          oxygen_saturation?: number | null
+          patient_id: string
+          recorded_at?: string
+          respiratory_rate?: number | null
+          systolic_bp?: number | null
+          temperature?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          blood_glucose?: number | null
+          created_at?: string
+          diastolic_bp?: number | null
+          heart_rate?: number | null
+          id?: string
+          notes?: string | null
+          oxygen_saturation?: number | null
+          patient_id?: string
+          recorded_at?: string
+          respiratory_rate?: number | null
+          systolic_bp?: number | null
+          temperature?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "vital_signs_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

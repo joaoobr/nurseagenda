@@ -241,5 +241,20 @@
       "incident": "Incident",
       "observation": "Observation"
     }
+  },
+  "vitalSigns": {
+    "title": "Signes Vitaux",
+    "record": "Enregistrer",
+    "charts": "Graphiques",
+    "history": "Historique",
+    "systolic": "Systolique",
+    "diastolic": "Diastolique",
+    "selectPatientFirst": "Sélectionnez un patient pour voir les signes vitaux",
+    "noRecords": "Aucun enregistrement de signes vitaux",
+    "needMoreData": "Enregistrez au moins 2 mesures pour voir les graphiques",
+    "recorded": "Signes vitaux enregistrés",
+    "deleted": "Enregistrement supprimé",
+    "confirmDelete": "Supprimer l'enregistrement ?",
+    "confirmDeleteDesc": "Cette action est irréversible."
   }
 }
