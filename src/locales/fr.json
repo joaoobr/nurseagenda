@@ -89,8 +89,16 @@
     "patientDeleted": "Patient supprimé avec succès",
     "confirmDelete": "Supprimer le patient ?",
     "confirmDeleteDesc": "Cette action est irréversible. Toutes les données du patient seront supprimées.",
-    "genders": { "male": "Masculin", "female": "Féminin", "other": "Autre" },
-    "statuses": { "active": "Actif", "discharged": "Sorti", "transferred": "Transféré" }
+    "genders": {
+      "male": "Masculin",
+      "female": "Féminin",
+      "other": "Autre"
+    },
+    "statuses": {
+      "active": "Actif",
+      "discharged": "Sorti",
+      "transferred": "Transféré"
+    }
   },
   "medications": {
     "title": "Médicaments",
@@ -213,5 +221,25 @@
     "fileTooLarge": "Fichier trop volumineux (max 2 Mo)",
     "specialtyPlaceholder": "Ex : Réanimation, Urgences, Pédiatrie",
     "registrationPlaceholder": "Ex : IDE 123456"
+  },
+  "nursingNotes": {
+    "title": "Notes Infirmières",
+    "addNote": "Nouvelle note",
+    "editNote": "Modifier la note",
+    "noteType": "Type",
+    "content": "Contenu",
+    "contentPlaceholder": "Décrivez l'évolution du patient...",
+    "noNotes": "Aucune note enregistrée",
+    "allPatients": "Tous les patients",
+    "noteAdded": "Note ajoutée avec succès",
+    "noteUpdated": "Note mise à jour avec succès",
+    "noteDeleted": "Note supprimée avec succès",
+    "confirmDelete": "Supprimer la note ?",
+    "confirmDeleteDesc": "Cette action est irréversible.",
+    "types": {
+      "evolution": "Évolution",
+      "incident": "Incident",
+      "observation": "Observation"
+    }
   }
 }

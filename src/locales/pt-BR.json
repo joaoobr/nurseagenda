@@ -221,5 +221,25 @@
     "fileTooLarge": "Arquivo muito grande (máx. 2MB)",
     "specialtyPlaceholder": "Ex: UTI, Emergência, Pediatria",
     "registrationPlaceholder": "Ex: COREN-SP 123456"
+  },
+  "nursingNotes": {
+    "title": "Evolução de Enfermagem",
+    "addNote": "Nova anotação",
+    "editNote": "Editar anotação",
+    "noteType": "Tipo",
+    "content": "Conteúdo",
+    "contentPlaceholder": "Descreva a evolução do paciente...",
+    "noNotes": "Nenhuma anotação registrada",
+    "allPatients": "Todos os pacientes",
+    "noteAdded": "Anotação adicionada com sucesso",
+    "noteUpdated": "Anotação atualizada com sucesso",
+    "noteDeleted": "Anotação excluída com sucesso",
+    "confirmDelete": "Excluir anotação?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita.",
+    "types": {
+      "evolution": "Evolução",
+      "incident": "Intercorrência",
+      "observation": "Observação"
+    }
   }
 }

@@ -221,5 +221,25 @@
     "fileTooLarge": "File too large (max 2MB)",
     "specialtyPlaceholder": "e.g. ICU, Emergency, Pediatrics",
     "registrationPlaceholder": "e.g. NMC 12345678"
+  },
+  "nursingNotes": {
+    "title": "Nursing Notes",
+    "addNote": "New note",
+    "editNote": "Edit note",
+    "noteType": "Type",
+    "content": "Content",
+    "contentPlaceholder": "Describe the patient evolution...",
+    "noNotes": "No notes registered",
+    "allPatients": "All patients",
+    "noteAdded": "Note added successfully",
+    "noteUpdated": "Note updated successfully",
+    "noteDeleted": "Note deleted successfully",
+    "confirmDelete": "Delete note?",
+    "confirmDeleteDesc": "This action cannot be undone.",
+    "types": {
+      "evolution": "Evolution",
+      "incident": "Incident",
+      "observation": "Observation"
+    }
   }
 }

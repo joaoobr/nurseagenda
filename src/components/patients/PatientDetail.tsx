@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, Pencil, Trash2, User, Phone, Droplets, AlertTriangle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, Pencil, Trash2, User, Phone, Droplets, AlertTriangle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
@@ -43,6 +44,7 @@ const InfoRow = ({ label, value, icon }: { label: string; value?: string | null;
 
 const PatientDetail = ({ patient, onBack, onEdit, onDelete }: PatientDetailProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const age = patient.date_of_birth
     ? Math.floor((Date.now() - new Date(patient.date_of_birth).getTime()) / 31557600000)
@@ -123,6 +125,16 @@ const PatientDetail = ({ patient, onBack, onEdit, onDelete }: PatientDetailProps
             <InfoRow label={t('patients.phone')} value={patient.emergency_contact_phone} />
           </div>
         )}
+
+        {/* Nursing Notes link */}
+        <Button
+          variant="outline"
+          className="w-full gap-2"
+          onClick={() => navigate(`/nursing-notes?patient=${patient.id}`)}
+        >
+          <FileText className="h-4 w-4" />
+          {t('nursingNotes.title')}
+        </Button>
       </div>
     </div>
   );
