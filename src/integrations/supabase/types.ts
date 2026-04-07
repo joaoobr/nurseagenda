@@ -62,6 +62,66 @@ export type Database = {
         }
         Relationships: []
       }
+      patients: {
+        Row: {
+          admitted_at: string | null
+          allergies: string | null
+          bed: string | null
+          blood_type: string | null
+          created_at: string
+          date_of_birth: string | null
+          diagnosis: string | null
+          emergency_contact_name: string | null
+          emergency_contact_phone: string | null
+          full_name: string
+          gender: string | null
+          id: string
+          observations: string | null
+          room: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          admitted_at?: string | null
+          allergies?: string | null
+          bed?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          diagnosis?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          full_name: string
+          gender?: string | null
+          id?: string
+          observations?: string | null
+          room?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          admitted_at?: string | null
+          allergies?: string | null
+          bed?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          diagnosis?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          full_name?: string
+          gender?: string | null
+          id?: string
+          observations?: string | null
+          room?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
