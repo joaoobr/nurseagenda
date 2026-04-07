@@ -5,7 +5,9 @@ import LanguageSelector from '@/components/LanguageSelector';
 import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
 import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
 import { useAuth } from '@/contexts/AuthContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { format } from 'date-fns';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
@@ -13,6 +15,29 @@ const Index = () => {
   const { user } = useAuth();
   const [quote, setQuote] = useState(() => getDailyQuote(i18n.language));
   const [tip, setTip] = useState(() => getDailyTip(i18n.language));
+  const [todayShifts, setTodayShifts] = useState(0);
+  const [pendingMeds, setPendingMeds] = useState(0);
+  const [activePatients, setActivePatients] = useState(0);
+
+  const today = useMemo(() => format(new Date(), 'yyyy-MM-dd'), []);
+
+  useEffect(() => {
+    if (!user) return;
+    const uid = user.id;
+
+    const fetchCounts = async () => {
+      const [shiftsRes, medsRes, patientsRes] = await Promise.all([
+        supabase.from('shifts').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('shift_date', today),
+        supabase.from('medications').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('status', 'pending'),
+        supabase.from('patients').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('status', 'active'),
+      ]);
+      setTodayShifts(shiftsRes.count ?? 0);
+      setPendingMeds(medsRes.count ?? 0);
+      setActivePatients(patientsRes.count ?? 0);
+    };
+
+    fetchCounts();
+  }, [user, today]);
 
   useEffect(() => {
     // Try Supabase first, fall back to local data
@@ -125,15 +150,15 @@ const Index = () => {
         <h2 className="text-sm font-semibold text-foreground mb-3">{t('home.todaySummary')}</h2>
         <div className="grid grid-cols-3 gap-3">
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-primary">0</p>
+            <p className="text-2xl font-bold text-primary">{todayShifts}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.shifts')}</p>
           </div>
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-warning">0</p>
+            <p className="text-2xl font-bold text-warning">{pendingMeds}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.pendingMeds')}</p>
           </div>
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-secondary">0</p>
+            <p className="text-2xl font-bold text-secondary">{activePatients}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.activePatients')}</p>
           </div>
         </div>
