@@ -5,7 +5,9 @@ import LanguageSelector from '@/components/LanguageSelector';
 import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
 import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
 import { useAuth } from '@/contexts/AuthContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { format } from 'date-fns';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
