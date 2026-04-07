@@ -150,15 +150,15 @@ const Index = () => {
         <h2 className="text-sm font-semibold text-foreground mb-3">{t('home.todaySummary')}</h2>
         <div className="grid grid-cols-3 gap-3">
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-primary">0</p>
+            <p className="text-2xl font-bold text-primary">{todayShifts}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.shifts')}</p>
           </div>
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-warning">0</p>
+            <p className="text-2xl font-bold text-warning">{pendingMeds}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.pendingMeds')}</p>
           </div>
           <div className="rounded-xl bg-card border border-border p-3 text-center">
-            <p className="text-2xl font-bold text-secondary">0</p>
+            <p className="text-2xl font-bold text-secondary">{activePatients}</p>
             <p className="text-[10px] text-muted-foreground mt-1">{t('home.activePatients')}</p>
           </div>
         </div>
