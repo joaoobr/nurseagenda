@@ -1,11 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import { Calendar, Users, Pill, Calculator, ClipboardList, Activity } from 'lucide-react';
+import { Calendar, Users, Pill, Calculator, ClipboardList, Activity, Search, Heart, Lightbulb, Stethoscope } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
+import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
+import { useMemo } from 'react';
 
 const Index = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+
+  const dailyQuote = useMemo(() => getDailyQuote(i18n.language), [i18n.language]);
+  const dailyTip = useMemo(() => getDailyTip(i18n.language), [i18n.language]);
 
   const quickActions = [
     {
@@ -53,9 +58,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="px-4 pt-6">
+    <div className="px-4 pt-6 space-y-5">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">{t('app.name')}</h1>
           <p className="text-sm text-muted-foreground">{t('app.tagline')}</p>
@@ -63,12 +68,32 @@ const Index = () => {
         <LanguageSelector />
       </div>
 
-      {/* Welcome card */}
-      <div className="rounded-xl bg-primary p-5 mb-6 text-primary-foreground">
-        <p className="text-sm font-medium opacity-90">{t('auth.welcomeBack')}</p>
-        <p className="text-xl font-bold mt-1">Enfermeira</p>
-        <p className="text-xs opacity-75 mt-2">
-          {new Date().toLocaleDateString(undefined, {
+      {/* Search bar */}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <input
+          type="text"
+          placeholder={t('home.searchPlaceholder')}
+          className="w-full pl-10 pr-4 py-3 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-shadow"
+        />
+      </div>
+
+      {/* Motivational message */}
+      <div className="rounded-xl bg-gradient-to-br from-primary to-secondary p-5 text-primary-foreground relative overflow-hidden">
+        <div className="absolute top-3 right-3 opacity-20">
+          <Heart className="h-16 w-16" fill="currentColor" />
+        </div>
+        <div className="flex items-center gap-2 mb-2">
+          <Stethoscope className="h-4 w-4" />
+          <p className="text-xs font-semibold uppercase tracking-wider opacity-90">
+            {t('home.motivationalTitle')}
+          </p>
+        </div>
+        <p className="text-sm font-medium leading-relaxed pr-12">
+          {dailyQuote}
+        </p>
+        <p className="text-xs opacity-75 mt-3">
+          {new Date().toLocaleDateString(i18n.language, {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
@@ -77,28 +102,64 @@ const Index = () => {
         </p>
       </div>
 
+      {/* Today's summary */}
+      <div>
+        <h2 className="text-sm font-semibold text-foreground mb-3">{t('home.todaySummary')}</h2>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="rounded-xl bg-card border border-border p-3 text-center">
+            <p className="text-2xl font-bold text-primary">0</p>
+            <p className="text-[10px] text-muted-foreground mt-1">{t('home.shifts')}</p>
+          </div>
+          <div className="rounded-xl bg-card border border-border p-3 text-center">
+            <p className="text-2xl font-bold text-warning">0</p>
+            <p className="text-[10px] text-muted-foreground mt-1">{t('home.pendingMeds')}</p>
+          </div>
+          <div className="rounded-xl bg-card border border-border p-3 text-center">
+            <p className="text-2xl font-bold text-secondary">0</p>
+            <p className="text-[10px] text-muted-foreground mt-1">{t('home.activePatients')}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Nursing tip of the day */}
+      <div className="rounded-xl bg-accent/50 border border-accent p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="p-1.5 rounded-lg bg-accent">
+            <Lightbulb className="h-4 w-4 text-accent-foreground" />
+          </div>
+          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-wider">
+            {t('home.tipTitle')}
+          </p>
+        </div>
+        <p className="text-sm text-foreground leading-relaxed">
+          {dailyTip}
+        </p>
+      </div>
+
       {/* Quick actions grid */}
-      <div className="grid grid-cols-2 gap-3">
-        {quickActions.map((action) => {
-          const Icon = action.icon;
-          return (
-            <button
-              key={action.path + action.label}
-              onClick={() => navigate(action.path)}
-              className="flex flex-col items-start gap-3 p-4 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow text-left"
-            >
-              <div className={`p-2.5 rounded-lg ${action.color}`}>
-                <Icon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">{action.label}</p>
-                <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
-                  {action.description}
-                </p>
-              </div>
-            </button>
-          );
-        })}
+      <div>
+        <div className="grid grid-cols-2 gap-3 pb-4">
+          {quickActions.map((action) => {
+            const Icon = action.icon;
+            return (
+              <button
+                key={action.path + action.label}
+                onClick={() => navigate(action.path)}
+                className="flex flex-col items-start gap-3 p-4 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow text-left"
+              >
+                <div className={`p-2.5 rounded-lg ${action.color}`}>
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{action.label}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
+                    {action.description}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

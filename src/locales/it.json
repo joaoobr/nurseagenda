@@ -120,5 +120,14 @@
     "notifications": "Notifiche",
     "account": "Account",
     "about": "Info"
+  },
+  "home": {
+    "motivationalTitle": "Messaggio del Giorno",
+    "tipTitle": "Consiglio Infermieristico",
+    "searchPlaceholder": "Cerca pazienti, farmaci...",
+    "todaySummary": "Riepilogo del Giorno",
+    "shifts": "Turni",
+    "pendingMeds": "Farmaci in attesa",
+    "activePatients": "Pazienti attivi"
   }
 }
