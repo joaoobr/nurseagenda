@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
 import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
 import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
+import { useAuth } from '@/contexts/AuthContext';
 import { useEffect, useState } from 'react';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [quote, setQuote] = useState(() => getDailyQuote(i18n.language));
   const [tip, setTip] = useState(() => getDailyTip(i18n.language));
 
