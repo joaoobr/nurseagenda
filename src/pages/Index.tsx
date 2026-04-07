@@ -90,10 +90,10 @@ const Index = () => {
     },
     {
       icon: ClipboardList,
-      label: 'Checklists',
-      description: t('common.noData'),
+      label: t('checklists.title'),
+      description: t('checklists.description'),
       path: '/checklists',
-      color: 'bg-muted text-muted-foreground',
+      color: 'bg-emerald-500/10 text-emerald-600',
     },
   ];
 

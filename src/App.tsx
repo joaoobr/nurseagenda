@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import NursingNotes from "./pages/NursingNotes";
 import VitalSigns from "./pages/VitalSigns";
 import More from "./pages/More";
+import Checklists from "./pages/Checklists";
 import NotFound from "./pages/NotFound";
 import '@/i18n';
 
@@ -44,6 +45,7 @@ const App = () => (
                       <Route path="/profile" element={<Profile />} />
                       <Route path="/nursing-notes" element={<NursingNotes />} />
                       <Route path="/vital-signs" element={<VitalSigns />} />
+                      <Route path="/checklists" element={<Checklists />} />
                       <Route path="/more" element={<More />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
