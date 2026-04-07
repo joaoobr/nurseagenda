@@ -89,8 +89,16 @@
     "patientDeleted": "Paziente eliminato con successo",
     "confirmDelete": "Eliminare il paziente?",
     "confirmDeleteDesc": "Questa azione non può essere annullata. Tutti i dati del paziente verranno rimossi.",
-    "genders": { "male": "Maschio", "female": "Femmina", "other": "Altro" },
-    "statuses": { "active": "Attivo", "discharged": "Dimesso", "transferred": "Trasferito" }
+    "genders": {
+      "male": "Maschio",
+      "female": "Femmina",
+      "other": "Altro"
+    },
+    "statuses": {
+      "active": "Attivo",
+      "discharged": "Dimesso",
+      "transferred": "Trasferito"
+    }
   },
   "medications": {
     "title": "Farmaci",
@@ -213,5 +221,25 @@
     "fileTooLarge": "File troppo grande (max 2MB)",
     "specialtyPlaceholder": "Es: Terapia intensiva, Pronto soccorso",
     "registrationPlaceholder": "Es: OPI 123456"
+  },
+  "nursingNotes": {
+    "title": "Note Infermieristiche",
+    "addNote": "Nuova nota",
+    "editNote": "Modifica nota",
+    "noteType": "Tipo",
+    "content": "Contenuto",
+    "contentPlaceholder": "Descrivi l'evoluzione del paziente...",
+    "noNotes": "Nessuna nota registrata",
+    "allPatients": "Tutti i pazienti",
+    "noteAdded": "Nota aggiunta con successo",
+    "noteUpdated": "Nota aggiornata con successo",
+    "noteDeleted": "Nota eliminata con successo",
+    "confirmDelete": "Eliminare la nota?",
+    "confirmDeleteDesc": "Questa azione non può essere annullata.",
+    "types": {
+      "evolution": "Evoluzione",
+      "incident": "Incidente",
+      "observation": "Osservazione"
+    }
   }
 }

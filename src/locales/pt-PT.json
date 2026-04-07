@@ -89,8 +89,16 @@
     "patientDeleted": "Paciente eliminado com sucesso",
     "confirmDelete": "Eliminar paciente?",
     "confirmDeleteDesc": "Esta ação não pode ser desfeita. Todos os dados deste paciente serão removidos.",
-    "genders": { "male": "Masculino", "female": "Feminino", "other": "Outro" },
-    "statuses": { "active": "Ativo", "discharged": "Alta", "transferred": "Transferido" }
+    "genders": {
+      "male": "Masculino",
+      "female": "Feminino",
+      "other": "Outro"
+    },
+    "statuses": {
+      "active": "Ativo",
+      "discharged": "Alta",
+      "transferred": "Transferido"
+    }
   },
   "medications": {
     "title": "Medicações",
@@ -213,5 +221,25 @@
     "fileTooLarge": "Ficheiro demasiado grande (máx. 2MB)",
     "specialtyPlaceholder": "Ex: UCI, Urgência, Pediatria",
     "registrationPlaceholder": "Ex: Cédula 123456"
+  },
+  "nursingNotes": {
+    "title": "Evolução de Enfermagem",
+    "addNote": "Nova anotação",
+    "editNote": "Editar anotação",
+    "noteType": "Tipo",
+    "content": "Conteúdo",
+    "contentPlaceholder": "Descreva a evolução do paciente...",
+    "noNotes": "Nenhuma anotação registada",
+    "allPatients": "Todos os pacientes",
+    "noteAdded": "Anotação adicionada com sucesso",
+    "noteUpdated": "Anotação atualizada com sucesso",
+    "noteDeleted": "Anotação eliminada com sucesso",
+    "confirmDelete": "Eliminar anotação?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita.",
+    "types": {
+      "evolution": "Evolução",
+      "incident": "Intercorrência",
+      "observation": "Observação"
+    }
   }
 }
