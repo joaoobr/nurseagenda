@@ -330,5 +330,32 @@
     "lastLogin": "Último acesso",
     "bannedLabel": "Bloqueado",
     "panel": "Painel Admin"
+  },
+  "subscription": {
+    "title": "Assinatura",
+    "subtitle": "Escolha o plano ideal para sua rotina",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "perMonth": "mês",
+    "perYear": "ano",
+    "savings": "🎉 2 meses grátis!",
+    "popular": "Mais popular",
+    "yourPlan": "Seu plano",
+    "currentPlan": "Plano atual",
+    "activePlan": "Plano ativo",
+    "renewsAt": "Renova em",
+    "subscribe": "Assinar",
+    "changePlan": "Trocar plano",
+    "manage": "Gerenciar",
+    "success": "Assinatura ativada com sucesso!",
+    "canceled": "Assinatura cancelada",
+    "features": {
+      "allModules": "Todos os módulos",
+      "unlimitedPatients": "Pacientes ilimitados",
+      "checklists": "Checklists e templates",
+      "vitalSigns": "Sinais vitais e gráficos",
+      "calculator": "Calculadora de dosagem",
+      "priority": "Suporte prioritário"
+    }
   }
 }
