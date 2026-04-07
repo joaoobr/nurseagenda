@@ -5,13 +5,15 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Plus, Search, Trash2, Edit, CheckCircle, PauseCircle } from 'lucide-react';
+import { Plus, Search, Trash2, Edit, CheckCircle, PauseCircle, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import MedicationForm from '@/components/medications/MedicationForm';
 import MedicationCard from '@/components/medications/MedicationCard';
+import { calculateScheduledTimes, parseFrequencyToHours, formatFrequencyLabel } from '@/utils/medicationSchedule';
 
 type StatusFilter = 'all' | 'pending' | 'administered' | 'suspended';
 
@@ -214,14 +216,28 @@ const Medications = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">{t('medications.frequency')}</span>
-                <span className="font-medium">{selectedMed.frequency}</span>
+                <span className="font-medium">{formatFrequencyLabel(selectedMed.frequency)}</span>
               </div>
-              {selectedMed.scheduled_time && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">{t('medications.time')}</span>
-                  <span className="font-medium">{selectedMed.scheduled_time.slice(0, 5)}</span>
-                </div>
-              )}
+              {selectedMed.scheduled_time && (() => {
+                const intervalHours = parseFrequencyToHours(selectedMed.frequency);
+                const times = intervalHours
+                  ? calculateScheduledTimes(selectedMed.scheduled_time.slice(0, 5), intervalHours)
+                  : [selectedMed.scheduled_time.slice(0, 5)];
+                return (
+                  <div className="space-y-1">
+                    <span className="text-muted-foreground flex items-center gap-1">
+                      <Clock className="h-3 w-3" /> {t('medications.scheduledTimes')}
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {times.map((time) => (
+                        <Badge key={time} variant="secondary" className="text-sm font-mono">
+                          {time}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
               {selectedMed.patients?.full_name && (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">{t('medications.patient')}</span>
