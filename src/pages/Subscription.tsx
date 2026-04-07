@@ -29,14 +29,19 @@ const Subscription = () => {
   const handleCheckout = async (priceId: string) => {
     setCheckoutLoading(priceId);
     try {
+      console.log('Starting checkout with priceId:', priceId);
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { priceId },
       });
+      console.log('Checkout response:', data, error);
       if (error) throw error;
       if (data?.url) {
         window.location.href = data.url;
+      } else {
+        toast.error('No checkout URL returned');
       }
     } catch (err: any) {
+      console.error('Checkout error:', err);
       toast.error(err.message || t('common.error'));
     } finally {
       setCheckoutLoading(null);
