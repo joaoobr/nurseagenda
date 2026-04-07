@@ -329,7 +329,11 @@
     "registered": "Cadastro",
     "lastLogin": "Último acesso",
     "bannedLabel": "Bloqueado",
-    "panel": "Painel Admin"
+    "panel": "Painel Admin",
+    "subscriber": "Assinante",
+    "free": "Gratuito",
+    "subscribers": "Assinantes",
+    "subscriptionUntil": "Assinatura até"
   },
   "subscription": {
     "title": "Assinatura",

@@ -329,7 +329,11 @@
     "registered": "Registered",
     "lastLogin": "Last login",
     "bannedLabel": "Blocked",
-    "panel": "Admin Panel"
+    "panel": "Admin Panel",
+    "subscriber": "Subscriber",
+    "free": "Free",
+    "subscribers": "Subscribers",
+    "subscriptionUntil": "Subscription until"
   },
   "subscription": {
     "title": "Subscription",
