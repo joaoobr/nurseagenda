@@ -54,15 +54,41 @@
   "patients": {
     "title": "Pacientes",
     "addPatient": "Adicionar paciente",
+    "editPatient": "Editar paciente",
     "name": "Nome",
     "age": "Idade",
+    "years": "anos",
+    "dateOfBirth": "Data de nascimento",
+    "gender": "Sexo",
     "bed": "Leito",
+    "room": "Quarto",
     "diagnosis": "Diagnóstico",
     "allergies": "Alergias",
+    "bloodType": "Tipo sanguíneo",
     "observations": "Observações",
     "vitalSigns": "Sinais vitais",
     "evolution": "Evolução",
-    "noPatients": "Nenhum paciente cadastrado"
+    "noPatients": "Nenhum paciente cadastrado",
+    "personalInfo": "Informações pessoais",
+    "location": "Localização",
+    "clinicalInfo": "Informações clínicas",
+    "emergencyContact": "Contato de emergência",
+    "phone": "Telefone",
+    "patientAdded": "Paciente adicionado com sucesso",
+    "patientUpdated": "Paciente atualizado com sucesso",
+    "patientDeleted": "Paciente excluído com sucesso",
+    "confirmDelete": "Excluir paciente?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita. Todos os dados deste paciente serão removidos.",
+    "genders": {
+      "male": "Masculino",
+      "female": "Feminino",
+      "other": "Outro"
+    },
+    "statuses": {
+      "active": "Ativo",
+      "discharged": "Alta",
+      "transferred": "Transferido"
+    }
   },
   "medications": {
     "title": "Medicações",

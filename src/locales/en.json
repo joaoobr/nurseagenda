@@ -54,15 +54,41 @@
   "patients": {
     "title": "Patients",
     "addPatient": "Add patient",
+    "editPatient": "Edit patient",
     "name": "Name",
     "age": "Age",
+    "years": "years",
+    "dateOfBirth": "Date of birth",
+    "gender": "Gender",
     "bed": "Bed",
+    "room": "Room",
     "diagnosis": "Diagnosis",
     "allergies": "Allergies",
+    "bloodType": "Blood type",
     "observations": "Observations",
     "vitalSigns": "Vital signs",
     "evolution": "Evolution",
-    "noPatients": "No patients registered"
+    "noPatients": "No patients registered",
+    "personalInfo": "Personal information",
+    "location": "Location",
+    "clinicalInfo": "Clinical information",
+    "emergencyContact": "Emergency contact",
+    "phone": "Phone",
+    "patientAdded": "Patient added successfully",
+    "patientUpdated": "Patient updated successfully",
+    "patientDeleted": "Patient deleted successfully",
+    "confirmDelete": "Delete patient?",
+    "confirmDeleteDesc": "This action cannot be undone. All data for this patient will be removed.",
+    "genders": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "statuses": {
+      "active": "Active",
+      "discharged": "Discharged",
+      "transferred": "Transferred"
+    }
   },
   "medications": {
     "title": "Medications",
