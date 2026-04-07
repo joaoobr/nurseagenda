@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAdminCheck } from '@/hooks/useAdminCheck';
 import LanguageSelector from '@/components/LanguageSelector';
-import { Settings as SettingsIcon, User, Bell, Info, LogOut, Shield } from 'lucide-react';
+import { Settings as SettingsIcon, User, Bell, Info, LogOut, Shield, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const More = () => {
@@ -13,6 +13,7 @@ const More = () => {
   const navigate = useNavigate();
 
   const menuItems = [
+    { icon: Crown, label: t('subscription.title'), path: '/subscription' },
     { icon: User, label: t('common.profile'), path: '/profile' },
     { icon: SettingsIcon, label: t('common.settings'), path: '/settings' },
     { icon: Bell, label: t('settings.notifications'), path: '/notifications' },
