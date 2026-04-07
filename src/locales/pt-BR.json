@@ -270,5 +270,43 @@
     "deleted": "Registro excluído",
     "confirmDelete": "Excluir registro?",
     "confirmDeleteDesc": "Esta ação não pode ser desfeita."
+  },
+  "checklists": {
+    "title": "Checklists",
+    "description": "Protocolos e boas práticas",
+    "activeChecklists": "Ativos",
+    "templates": "Templates",
+    "addTemplate": "Novo template",
+    "editTemplate": "Editar template",
+    "applyTemplate": "Aplicar template",
+    "selectTemplate": "Selecione o template",
+    "templateTitle": "Título do template",
+    "templateTitlePlaceholder": "Ex: Admissão de paciente",
+    "category": "Categoria",
+    "items": "itens",
+    "item": "Item",
+    "addItem": "Adicionar item",
+    "moreItems": "mais itens",
+    "apply": "Aplicar",
+    "system": "Sistema",
+    "personal": "Pessoal",
+    "completed": "Concluído",
+    "inProgress": "Em andamento",
+    "noTemplates": "Nenhum template cadastrado",
+    "noChecklists": "Nenhum checklist ativo",
+    "templateAdded": "Template criado com sucesso",
+    "templateUpdated": "Template atualizado com sucesso",
+    "templateDeleted": "Template excluído com sucesso",
+    "checklistApplied": "Checklist aplicado ao paciente",
+    "checklistDeleted": "Checklist excluído com sucesso",
+    "confirmDelete": "Excluir?",
+    "confirmDeleteDesc": "Esta ação não pode ser desfeita.",
+    "categories": {
+      "general": "Geral",
+      "admission": "Admissão",
+      "discharge": "Alta",
+      "procedure": "Procedimento",
+      "daily_care": "Cuidados diários"
+    }
   }
 }
