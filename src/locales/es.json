@@ -270,5 +270,43 @@
     "deleted": "Registro eliminado",
     "confirmDelete": "¿Eliminar registro?",
     "confirmDeleteDesc": "Esta acción no se puede deshacer."
+  },
+  "checklists": {
+    "title": "Checklists",
+    "description": "Protocolos y buenas prácticas",
+    "activeChecklists": "Activos",
+    "templates": "Plantillas",
+    "addTemplate": "Nueva plantilla",
+    "editTemplate": "Editar plantilla",
+    "applyTemplate": "Aplicar plantilla",
+    "selectTemplate": "Seleccione la plantilla",
+    "templateTitle": "Título de la plantilla",
+    "templateTitlePlaceholder": "Ej: Admisión de paciente",
+    "category": "Categoría",
+    "items": "ítems",
+    "item": "Ítem",
+    "addItem": "Agregar ítem",
+    "moreItems": "más ítems",
+    "apply": "Aplicar",
+    "system": "Sistema",
+    "personal": "Personal",
+    "completed": "Completado",
+    "inProgress": "En progreso",
+    "noTemplates": "No hay plantillas creadas",
+    "noChecklists": "No hay checklists activos",
+    "templateAdded": "Plantilla creada con éxito",
+    "templateUpdated": "Plantilla actualizada con éxito",
+    "templateDeleted": "Plantilla eliminada con éxito",
+    "checklistApplied": "Checklist aplicado al paciente",
+    "checklistDeleted": "Checklist eliminado con éxito",
+    "confirmDelete": "¿Eliminar?",
+    "confirmDeleteDesc": "Esta acción no se puede deshacer.",
+    "categories": {
+      "general": "General",
+      "admission": "Admisión",
+      "discharge": "Alta",
+      "procedure": "Procedimiento",
+      "daily_care": "Cuidados diarios"
+    }
   }
 }

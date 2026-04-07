@@ -270,5 +270,43 @@
     "deleted": "Enregistrement supprimé",
     "confirmDelete": "Supprimer l'enregistrement ?",
     "confirmDeleteDesc": "Cette action est irréversible."
+  },
+  "checklists": {
+    "title": "Checklists",
+    "description": "Protocoles et bonnes pratiques",
+    "activeChecklists": "Actifs",
+    "templates": "Modèles",
+    "addTemplate": "Nouveau modèle",
+    "editTemplate": "Modifier le modèle",
+    "applyTemplate": "Appliquer un modèle",
+    "selectTemplate": "Sélectionner le modèle",
+    "templateTitle": "Titre du modèle",
+    "templateTitlePlaceholder": "Ex : Admission du patient",
+    "category": "Catégorie",
+    "items": "éléments",
+    "item": "Élément",
+    "addItem": "Ajouter un élément",
+    "moreItems": "éléments supplémentaires",
+    "apply": "Appliquer",
+    "system": "Système",
+    "personal": "Personnel",
+    "completed": "Terminé",
+    "inProgress": "En cours",
+    "noTemplates": "Aucun modèle créé",
+    "noChecklists": "Aucune checklist active",
+    "templateAdded": "Modèle créé avec succès",
+    "templateUpdated": "Modèle mis à jour avec succès",
+    "templateDeleted": "Modèle supprimé avec succès",
+    "checklistApplied": "Checklist appliquée au patient",
+    "checklistDeleted": "Checklist supprimée avec succès",
+    "confirmDelete": "Supprimer ?",
+    "confirmDeleteDesc": "Cette action est irréversible.",
+    "categories": {
+      "general": "Général",
+      "admission": "Admission",
+      "discharge": "Sortie",
+      "procedure": "Procédure",
+      "daily_care": "Soins quotidiens"
+    }
   }
 }
