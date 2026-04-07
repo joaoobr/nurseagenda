@@ -2,15 +2,28 @@ import { useTranslation } from 'react-i18next';
 import { Calendar, Users, Pill, Calculator, ClipboardList, Activity, Search, Heart, Lightbulb, Stethoscope } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
+import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
 import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [quote, setQuote] = useState(() => getDailyQuote(i18n.language));
+  const [tip, setTip] = useState(() => getDailyTip(i18n.language));
 
-  const dailyQuote = useMemo(() => getDailyQuote(i18n.language), [i18n.language]);
-  const dailyTip = useMemo(() => getDailyTip(i18n.language), [i18n.language]);
+  useEffect(() => {
+    // Try Supabase first, fall back to local data
+    const lang = i18n.language;
+    fetchDailyQuote(lang).then((q) => { if (q) setQuote(q); });
+    fetchDailyTip(lang).then((t) => { if (t) setTip(t); });
+  }, [i18n.language]);
+
+  // Update local fallback when language changes
+  useEffect(() => {
+    setQuote(getDailyQuote(i18n.language));
+    setTip(getDailyTip(i18n.language));
+  }, [i18n.language]);
 
   const quickActions = [
     {
@@ -90,7 +103,7 @@ const Index = () => {
           </p>
         </div>
         <p className="text-sm font-medium leading-relaxed pr-12">
-          {dailyQuote}
+          {quote}
         </p>
         <p className="text-xs opacity-75 mt-3">
           {new Date().toLocaleDateString(i18n.language, {
@@ -132,7 +145,7 @@ const Index = () => {
           </p>
         </div>
         <p className="text-sm text-foreground leading-relaxed">
-          {dailyTip}
+          {tip}
         </p>
       </div>
 

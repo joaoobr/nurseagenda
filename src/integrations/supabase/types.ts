@@ -17,47 +17,47 @@ export type Database = {
       motivational_quotes: {
         Row: {
           created_at: string
-          day_of_year: number
           id: string
           language: string
           quote: string
+          sort_order: number
         }
         Insert: {
           created_at?: string
-          day_of_year: number
           id?: string
           language: string
           quote: string
+          sort_order?: number
         }
         Update: {
           created_at?: string
-          day_of_year?: number
           id?: string
           language?: string
           quote?: string
+          sort_order?: number
         }
         Relationships: []
       }
       nursing_tips: {
         Row: {
           created_at: string
-          day_of_year: number
           id: string
           language: string
+          sort_order: number
           tip: string
         }
         Insert: {
           created_at?: string
-          day_of_year: number
           id?: string
           language: string
+          sort_order?: number
           tip: string
         }
         Update: {
           created_at?: string
-          day_of_year?: number
           id?: string
           language?: string
+          sort_order?: number
           tip?: string
         }
         Relationships: []
