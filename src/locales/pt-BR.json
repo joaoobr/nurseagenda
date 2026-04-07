@@ -309,5 +309,26 @@
       "procedure": "Procedimento",
       "daily_care": "Cuidados diários"
     }
+  },
+  "admin": {
+    "title": "Painel Admin",
+    "subtitle": "Gerenciamento de usuários",
+    "totalUsers": "Total",
+    "active": "Ativos",
+    "blocked": "Bloqueados",
+    "user": "Usuário",
+    "moderator": "Moderador",
+    "block": "Bloquear",
+    "unblock": "Desbloquear",
+    "userBanned": "Usuário bloqueado",
+    "userUnbanned": "Usuário desbloqueado",
+    "userDeleted": "Usuário excluído",
+    "roleUpdated": "Papel atualizado",
+    "confirmDelete": "Excluir usuário?",
+    "confirmDeleteDesc": "Esta ação é permanente. Todos os dados do usuário serão removidos.",
+    "registered": "Cadastro",
+    "lastLogin": "Último acesso",
+    "bannedLabel": "Bloqueado",
+    "panel": "Painel Admin"
   }
 }

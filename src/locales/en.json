@@ -309,5 +309,26 @@
       "procedure": "Procedure",
       "daily_care": "Daily care"
     }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "User management",
+    "totalUsers": "Total",
+    "active": "Active",
+    "blocked": "Blocked",
+    "user": "User",
+    "moderator": "Moderator",
+    "block": "Block",
+    "unblock": "Unblock",
+    "userBanned": "User blocked",
+    "userUnbanned": "User unblocked",
+    "userDeleted": "User deleted",
+    "roleUpdated": "Role updated",
+    "confirmDelete": "Delete user?",
+    "confirmDeleteDesc": "This action is permanent. All user data will be removed.",
+    "registered": "Registered",
+    "lastLogin": "Last login",
+    "bannedLabel": "Blocked",
+    "panel": "Admin Panel"
   }
 }
