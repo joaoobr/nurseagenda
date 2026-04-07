@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      motivational_quotes: {
+        Row: {
+          created_at: string
+          day_of_year: number
+          id: string
+          language: string
+          quote: string
+        }
+        Insert: {
+          created_at?: string
+          day_of_year: number
+          id?: string
+          language: string
+          quote: string
+        }
+        Update: {
+          created_at?: string
+          day_of_year?: number
+          id?: string
+          language?: string
+          quote?: string
+        }
+        Relationships: []
+      }
+      nursing_tips: {
+        Row: {
+          created_at: string
+          day_of_year: number
+          id: string
+          language: string
+          tip: string
+        }
+        Insert: {
+          created_at?: string
+          day_of_year: number
+          id?: string
+          language: string
+          tip: string
+        }
+        Update: {
+          created_at?: string
+          day_of_year?: number
+          id?: string
+          language?: string
+          tip?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
