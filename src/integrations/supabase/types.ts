@@ -97,6 +97,44 @@ export type Database = {
         }
         Relationships: []
       }
+      nursing_notes: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          note_type: string
+          patient_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          note_type?: string
+          patient_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          note_type?: string
+          patient_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "nursing_notes_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       nursing_tips: {
         Row: {
           created_at: string
