@@ -274,6 +274,7 @@
   "checklists": {
     "title": "Checklist",
     "description": "Protocolli e buone pratiche",
+    "descriptionLabel": "Descrizione",
     "activeChecklists": "Attive",
     "templates": "Modelli",
     "addTemplate": "Nuovo modello",
