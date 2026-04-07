@@ -241,5 +241,20 @@
       "incident": "Incident",
       "observation": "Observation"
     }
+  },
+  "vitalSigns": {
+    "title": "Vital Signs",
+    "record": "Record",
+    "charts": "Charts",
+    "history": "History",
+    "systolic": "Systolic",
+    "diastolic": "Diastolic",
+    "selectPatientFirst": "Select a patient to view vital signs",
+    "noRecords": "No vital sign records",
+    "needMoreData": "Record at least 2 measurements to see charts",
+    "recorded": "Vital signs recorded",
+    "deleted": "Record deleted",
+    "confirmDelete": "Delete record?",
+    "confirmDeleteDesc": "This action cannot be undone."
   }
 }
