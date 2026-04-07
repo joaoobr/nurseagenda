@@ -3,8 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import AppLayout from "@/components/layout/AppLayout";
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
 import Schedule from "./pages/Schedule";
 import Patients from "./pages/Patients";
 import Medications from "./pages/Medications";
@@ -21,17 +24,29 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AppLayout>
+        <AuthProvider>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/patients" element={<Patients />} />
-            <Route path="/medications" element={<Medications />} />
-            <Route path="/calculator" element={<Calculator />} />
-            <Route path="/more" element={<More />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route
+              path="/*"
+              element={
+                <ProtectedRoute>
+                  <AppLayout>
+                    <Routes>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/schedule" element={<Schedule />} />
+                      <Route path="/patients" element={<Patients />} />
+                      <Route path="/medications" element={<Medications />} />
+                      <Route path="/calculator" element={<Calculator />} />
+                      <Route path="/more" element={<More />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </AppLayout>
+                </ProtectedRoute>
+              }
+            />
           </Routes>
-        </AppLayout>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

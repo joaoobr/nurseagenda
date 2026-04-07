@@ -28,7 +28,11 @@
     "welcomeBack": "Bem-vindo(a) de volta",
     "createAccount": "Crie sua conta",
     "loginSubtitle": "Acesse sua agenda de enfermagem",
-    "signupSubtitle": "Comece a organizar seus plantões"
+    "signupSubtitle": "Comece a organizar seus plantões",
+    "verifyEmail": "Verifique seu e-mail",
+    "verifyEmailMessage": "Enviamos um link de confirmação para o seu e-mail. Clique no link para ativar sua conta.",
+    "backToLogin": "Voltar para o login",
+    "emailNotConfirmed": "E-mail não confirmado. Verifique sua caixa de entrada."
   },
   "schedule": {
     "title": "Agenda de Plantões",

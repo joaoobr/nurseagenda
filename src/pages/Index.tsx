@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
 import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
 import { getDailyQuote, getDailyTip } from '@/data/motivationalQuotes';
+import { useAuth } from '@/contexts/AuthContext';
 import { useEffect, useState } from 'react';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [quote, setQuote] = useState(() => getDailyQuote(i18n.language));
   const [tip, setTip] = useState(() => getDailyTip(i18n.language));
 
@@ -96,6 +98,9 @@ const Index = () => {
         <div className="absolute top-3 right-3 opacity-20">
           <Heart className="h-16 w-16" fill="currentColor" />
         </div>
+        <p className="text-sm font-medium opacity-90 mb-1">
+          {t('auth.welcomeBack')}, {user?.user_metadata?.full_name || user?.user_metadata?.name || t('nav.home')} 👋
+        </p>
         <div className="flex items-center gap-2 mb-2">
           <Stethoscope className="h-4 w-4" />
           <p className="text-xs font-semibold uppercase tracking-wider opacity-90">

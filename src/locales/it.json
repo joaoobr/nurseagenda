@@ -28,7 +28,11 @@
     "welcomeBack": "Bentornato/a",
     "createAccount": "Crea il tuo account",
     "loginSubtitle": "Accedi alla tua agenda infermieristica",
-    "signupSubtitle": "Inizia a organizzare i tuoi turni"
+    "signupSubtitle": "Inizia a organizzare i tuoi turni",
+    "verifyEmail": "Controlla la tua email",
+    "verifyEmailMessage": "Abbiamo inviato un link di conferma alla tua email. Clicca sul link per attivare il tuo account.",
+    "backToLogin": "Torna al login",
+    "emailNotConfirmed": "Email non confermata. Controlla la tua casella di posta."
   },
   "schedule": {
     "title": "Agenda dei Turni",

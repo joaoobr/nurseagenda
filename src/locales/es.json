@@ -28,7 +28,11 @@
     "welcomeBack": "Bienvenido/a de vuelta",
     "createAccount": "Crea tu cuenta",
     "loginSubtitle": "Accede a tu agenda de enfermería",
-    "signupSubtitle": "Empieza a organizar tus turnos"
+    "signupSubtitle": "Empieza a organizar tus turnos",
+    "verifyEmail": "Verifica tu correo",
+    "verifyEmailMessage": "Enviamos un enlace de confirmación a tu correo. Haz clic en el enlace para activar tu cuenta.",
+    "backToLogin": "Volver al inicio de sesión",
+    "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada."
   },
   "schedule": {
     "title": "Agenda de Turnos",

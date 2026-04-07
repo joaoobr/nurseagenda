@@ -28,7 +28,11 @@
     "welcomeBack": "Bon retour",
     "createAccount": "Créez votre compte",
     "loginSubtitle": "Accédez à votre agenda infirmier",
-    "signupSubtitle": "Commencez à organiser vos gardes"
+    "signupSubtitle": "Commencez à organiser vos gardes",
+    "verifyEmail": "Vérifiez votre e-mail",
+    "verifyEmailMessage": "Nous avons envoyé un lien de confirmation à votre e-mail. Cliquez sur le lien pour activer votre compte.",
+    "backToLogin": "Retour à la connexion",
+    "emailNotConfirmed": "E-mail non confirmé. Veuillez vérifier votre boîte de réception."
   },
   "schedule": {
     "title": "Planning des Gardes",
