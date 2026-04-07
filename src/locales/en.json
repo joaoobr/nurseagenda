@@ -330,5 +330,32 @@
     "lastLogin": "Last login",
     "bannedLabel": "Blocked",
     "panel": "Admin Panel"
+  },
+  "subscription": {
+    "title": "Subscription",
+    "subtitle": "Choose the best plan for your routine",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "perMonth": "month",
+    "perYear": "year",
+    "savings": "🎉 2 months free!",
+    "popular": "Most popular",
+    "yourPlan": "Your plan",
+    "currentPlan": "Current plan",
+    "activePlan": "Active plan",
+    "renewsAt": "Renews on",
+    "subscribe": "Subscribe",
+    "changePlan": "Change plan",
+    "manage": "Manage",
+    "success": "Subscription activated successfully!",
+    "canceled": "Subscription canceled",
+    "features": {
+      "allModules": "All modules",
+      "unlimitedPatients": "Unlimited patients",
+      "checklists": "Checklists & templates",
+      "vitalSigns": "Vital signs & charts",
+      "calculator": "Dosage calculator",
+      "priority": "Priority support"
+    }
   }
 }

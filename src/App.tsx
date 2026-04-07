@@ -18,6 +18,7 @@ import VitalSigns from "./pages/VitalSigns";
 import More from "./pages/More";
 import Checklists from "./pages/Checklists";
 import Admin from "./pages/Admin";
+import Subscription from "./pages/Subscription";
 import NotFound from "./pages/NotFound";
 import '@/i18n';
 
@@ -48,6 +49,7 @@ const App = () => (
                       <Route path="/vital-signs" element={<VitalSigns />} />
                       <Route path="/checklists" element={<Checklists />} />
                       <Route path="/admin" element={<Admin />} />
+                      <Route path="/subscription" element={<Subscription />} />
                       <Route path="/more" element={<More />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
