@@ -282,7 +282,7 @@
     "selectTemplate": "Select template",
     "templateTitle": "Template title",
     "templateTitlePlaceholder": "E.g.: Patient admission",
-    "description": "Description",
+    "descriptionLabel": "Description",
     "category": "Category",
     "items": "items",
     "item": "Item",
