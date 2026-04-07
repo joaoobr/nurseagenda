@@ -14,6 +14,65 @@ export type Database = {
   }
   public: {
     Tables: {
+      medications: {
+        Row: {
+          created_at: string
+          dose: string
+          end_date: string | null
+          frequency: string
+          id: string
+          medication_name: string
+          notes: string | null
+          patient_id: string | null
+          route: string
+          scheduled_time: string | null
+          start_date: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          dose: string
+          end_date?: string | null
+          frequency: string
+          id?: string
+          medication_name: string
+          notes?: string | null
+          patient_id?: string | null
+          route?: string
+          scheduled_time?: string | null
+          start_date?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          dose?: string
+          end_date?: string | null
+          frequency?: string
+          id?: string
+          medication_name?: string
+          notes?: string | null
+          patient_id?: string | null
+          route?: string
+          scheduled_time?: string | null
+          start_date?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "medications_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       motivational_quotes: {
         Row: {
           created_at: string
