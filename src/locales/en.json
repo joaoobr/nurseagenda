@@ -211,5 +211,15 @@
     "shifts": "Shifts",
     "pendingMeds": "Pending meds",
     "activePatients": "Active patients"
+  },
+  "profile": {
+    "title": "My Profile",
+    "personalInfo": "Personal information",
+    "updated": "Profile updated successfully",
+    "avatarUploaded": "Photo updated",
+    "avatarHint": "Tap to change photo (max 2MB)",
+    "fileTooLarge": "File too large (max 2MB)",
+    "specialtyPlaceholder": "e.g. ICU, Emergency, Pediatrics",
+    "registrationPlaceholder": "e.g. NMC 12345678"
   }
 }

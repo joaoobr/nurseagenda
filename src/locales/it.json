@@ -203,5 +203,15 @@
     "shifts": "Turni",
     "pendingMeds": "Farmaci in attesa",
     "activePatients": "Pazienti attivi"
+  },
+  "profile": {
+    "title": "Il Mio Profilo",
+    "personalInfo": "Informazioni personali",
+    "updated": "Profilo aggiornato con successo",
+    "avatarUploaded": "Foto aggiornata",
+    "avatarHint": "Tocca per cambiare la foto (max 2MB)",
+    "fileTooLarge": "File troppo grande (max 2MB)",
+    "specialtyPlaceholder": "Es: Terapia intensiva, Pronto soccorso",
+    "registrationPlaceholder": "Es: OPI 123456"
   }
 }

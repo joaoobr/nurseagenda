@@ -211,5 +211,15 @@
     "shifts": "Plantões",
     "pendingMeds": "Medicações pendentes",
     "activePatients": "Pacientes ativos"
+  },
+  "profile": {
+    "title": "Meu Perfil",
+    "personalInfo": "Informações pessoais",
+    "updated": "Perfil atualizado com sucesso",
+    "avatarUploaded": "Foto atualizada",
+    "avatarHint": "Toque para alterar a foto (máx. 2MB)",
+    "fileTooLarge": "Arquivo muito grande (máx. 2MB)",
+    "specialtyPlaceholder": "Ex: UTI, Emergência, Pediatria",
+    "registrationPlaceholder": "Ex: COREN-SP 123456"
   }
 }
