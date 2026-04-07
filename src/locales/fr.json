@@ -120,5 +120,14 @@
     "notifications": "Notifications",
     "account": "Compte",
     "about": "À propos"
+  },
+  "home": {
+    "motivationalTitle": "Message du Jour",
+    "tipTitle": "Conseil Infirmier",
+    "searchPlaceholder": "Rechercher patients, médicaments...",
+    "todaySummary": "Résumé du Jour",
+    "shifts": "Gardes",
+    "pendingMeds": "Médicaments en attente",
+    "activePatients": "Patients actifs"
   }
 }

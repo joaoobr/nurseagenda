@@ -120,5 +120,14 @@
     "notifications": "Notifications",
     "account": "Account",
     "about": "About"
+  },
+  "home": {
+    "motivationalTitle": "Daily Message",
+    "tipTitle": "Nursing Tip",
+    "searchPlaceholder": "Search patients, medications...",
+    "todaySummary": "Today's Summary",
+    "shifts": "Shifts",
+    "pendingMeds": "Pending meds",
+    "activePatients": "Active patients"
   }
 }

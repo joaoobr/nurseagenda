@@ -120,5 +120,14 @@
     "notifications": "Notificações",
     "account": "Conta",
     "about": "Sobre"
+  },
+  "home": {
+    "motivationalTitle": "Mensagem do Dia",
+    "tipTitle": "Dica de Enfermagem",
+    "searchPlaceholder": "Pesquisar pacientes, medicações...",
+    "todaySummary": "Resumo do Dia",
+    "shifts": "Turnos",
+    "pendingMeds": "Medicações pendentes",
+    "activePatients": "Pacientes ativos"
   }
 }

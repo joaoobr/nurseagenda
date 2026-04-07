@@ -120,5 +120,14 @@
     "notifications": "Notificaciones",
     "account": "Cuenta",
     "about": "Acerca de"
+  },
+  "home": {
+    "motivationalTitle": "Mensaje del Día",
+    "tipTitle": "Consejo de Enfermería",
+    "searchPlaceholder": "Buscar pacientes, medicaciones...",
+    "todaySummary": "Resumen del Día",
+    "shifts": "Turnos",
+    "pendingMeds": "Medicaciones pendientes",
+    "activePatients": "Pacientes activos"
   }
 }
