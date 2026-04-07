@@ -100,7 +100,7 @@ const TemplateForm = ({ template, onSaved }: Props) => {
       </div>
 
       <div>
-        <Label>{t('checklists.description')}</Label>
+        <Label>{t('checklists.descriptionLabel')}</Label>
         <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={2} />
       </div>
 
