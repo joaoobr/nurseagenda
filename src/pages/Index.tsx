@@ -15,6 +15,29 @@ const Index = () => {
   const { user } = useAuth();
   const [quote, setQuote] = useState(() => getDailyQuote(i18n.language));
   const [tip, setTip] = useState(() => getDailyTip(i18n.language));
+  const [todayShifts, setTodayShifts] = useState(0);
+  const [pendingMeds, setPendingMeds] = useState(0);
+  const [activePatients, setActivePatients] = useState(0);
+
+  const today = useMemo(() => format(new Date(), 'yyyy-MM-dd'), []);
+
+  useEffect(() => {
+    if (!user) return;
+    const uid = user.id;
+
+    const fetchCounts = async () => {
+      const [shiftsRes, medsRes, patientsRes] = await Promise.all([
+        supabase.from('shifts').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('shift_date', today),
+        supabase.from('medications').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('status', 'pending'),
+        supabase.from('patients').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('status', 'active'),
+      ]);
+      setTodayShifts(shiftsRes.count ?? 0);
+      setPendingMeds(medsRes.count ?? 0);
+      setActivePatients(patientsRes.count ?? 0);
+    };
+
+    fetchCounts();
+  }, [user, today]);
 
   useEffect(() => {
     // Try Supabase first, fall back to local data
