@@ -14,6 +14,7 @@ import Medications from "./pages/Medications";
 import Calculator from "./pages/Calculator";
 import Profile from "./pages/Profile";
 import NursingNotes from "./pages/NursingNotes";
+import VitalSigns from "./pages/VitalSigns";
 import More from "./pages/More";
 import NotFound from "./pages/NotFound";
 import '@/i18n';
@@ -42,6 +43,7 @@ const App = () => (
                       <Route path="/calculator" element={<Calculator />} />
                       <Route path="/profile" element={<Profile />} />
                       <Route path="/nursing-notes" element={<NursingNotes />} />
+                      <Route path="/vital-signs" element={<VitalSigns />} />
                       <Route path="/more" element={<More />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
