@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Pill, Clock, User } from 'lucide-react';
+import { calculateScheduledTimes, parseFrequencyToHours, formatFrequencyLabel } from '@/utils/medicationSchedule';
 
 interface Medication {
   id: string;
@@ -30,6 +31,11 @@ const MedicationCard = ({ medication, onClick }: MedicationCardProps) => {
   const { t } = useTranslation();
   const statusStyle = STATUS_STYLES[medication.status] || STATUS_STYLES.pending;
 
+  const intervalHours = parseFrequencyToHours(medication.frequency);
+  const scheduledTimes = medication.scheduled_time && intervalHours
+    ? calculateScheduledTimes(medication.scheduled_time.slice(0, 5), intervalHours)
+    : medication.scheduled_time ? [medication.scheduled_time.slice(0, 5)] : [];
+
   return (
     <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={onClick}>
       <CardContent className="p-3">
@@ -47,10 +53,11 @@ const MedicationCard = ({ medication, onClick }: MedicationCardProps) => {
             {t(`medications.${medication.status}`)}
           </Badge>
         </div>
-        <div className="flex gap-3 mt-2 ml-12 text-xs text-muted-foreground">
-          {medication.scheduled_time && (
+        <div className="flex flex-wrap gap-2 mt-2 ml-12 text-xs text-muted-foreground">
+          {scheduledTimes.length > 0 && (
             <span className="flex items-center gap-1">
-              <Clock className="h-3 w-3" /> {medication.scheduled_time.slice(0, 5)}
+              <Clock className="h-3 w-3" />
+              {scheduledTimes.join(' • ')}
             </span>
           )}
           {medication.patients?.full_name && (
@@ -58,7 +65,7 @@ const MedicationCard = ({ medication, onClick }: MedicationCardProps) => {
               <User className="h-3 w-3" /> {medication.patients.full_name}
             </span>
           )}
-          <span>{medication.frequency}</span>
+          <span>{formatFrequencyLabel(medication.frequency)}</span>
         </div>
       </CardContent>
     </Card>
