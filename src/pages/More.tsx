@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { useAdminCheck } from '@/hooks/useAdminCheck';
 import LanguageSelector from '@/components/LanguageSelector';
-import { Settings as SettingsIcon, User, Bell, Info, LogOut } from 'lucide-react';
+import { Settings as SettingsIcon, User, Bell, Info, LogOut, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const More = () => {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
+  const { isAdmin } = useAdminCheck();
   const navigate = useNavigate();
 
   const menuItems = [
@@ -15,6 +17,7 @@ const More = () => {
     { icon: SettingsIcon, label: t('common.settings'), path: '/settings' },
     { icon: Bell, label: t('settings.notifications'), path: '/notifications' },
     { icon: Info, label: t('settings.about'), path: '/about' },
+    ...(isAdmin ? [{ icon: Shield, label: t('admin.panel'), path: '/admin' }] : []),
   ];
 
   const handleLogout = async () => {
