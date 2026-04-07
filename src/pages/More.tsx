@@ -54,6 +54,7 @@ const More = () => {
           return (
             <button
               key={item.label}
+              onClick={() => item.path && navigate(item.path)}
               className="flex items-center gap-3 w-full p-3 rounded-lg hover:bg-muted transition-colors text-left"
             >
               <Icon className="h-5 w-5 text-muted-foreground" />
