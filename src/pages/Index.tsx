@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import TrialBanner from '@/components/TrialBanner';
 import { Calendar, Users, Pill, Calculator, ClipboardList, Activity, Search, Heart, Lightbulb, Stethoscope } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
