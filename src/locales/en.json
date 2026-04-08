@@ -361,5 +361,13 @@
       "calculator": "Dosage calculator",
       "priority": "Priority support"
     }
+  },
+  "paywall": {
+    "title": "Your free trial has expired",
+    "description": "Subscribe now to get full access to all NurseAgenda features and optimize your nursing routine.",
+    "cta": "Subscribe now",
+    "ctaShort": "Subscribe",
+    "hint": "Cancel anytime. No commitment.",
+    "trialBanner": "You have {{days}} day(s) left on your free trial"
   }
 }

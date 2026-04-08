@@ -309,5 +309,40 @@
       "procedure": "Procedimento",
       "daily_care": "Cuidados diários"
     }
+  },
+  "subscription": {
+    "title": "Subscrição",
+    "subtitle": "Escolha o plano ideal para a sua rotina",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "perMonth": "mês",
+    "perYear": "ano",
+    "savings": "🎉 2 meses grátis!",
+    "popular": "Mais popular",
+    "yourPlan": "O seu plano",
+    "currentPlan": "Plano atual",
+    "activePlan": "Plano ativo",
+    "renewsAt": "Renova a",
+    "subscribe": "Subscrever",
+    "changePlan": "Alterar plano",
+    "manage": "Gerir",
+    "success": "Subscrição ativada com sucesso!",
+    "canceled": "Subscrição cancelada",
+    "features": {
+      "allModules": "Todos os módulos",
+      "unlimitedPatients": "Pacientes ilimitados",
+      "checklists": "Checklists e modelos",
+      "vitalSigns": "Sinais vitais e gráficos",
+      "calculator": "Calculadora de dosagem",
+      "priority": "Suporte prioritário"
+    }
+  },
+  "paywall": {
+    "title": "O seu período de teste expirou",
+    "description": "Subscreva agora para ter acesso completo a todas as funcionalidades do NurseAgenda e otimize a sua rotina de enfermagem.",
+    "cta": "Subscrever agora",
+    "ctaShort": "Subscrever",
+    "hint": "Cancele a qualquer momento. Sem compromisso.",
+    "trialBanner": "Tem {{days}} dia(s) restante(s) de teste gratuito"
   }
 }
