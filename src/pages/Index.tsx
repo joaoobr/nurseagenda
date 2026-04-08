@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import TrialBanner from '@/components/TrialBanner';
 import { Calendar, Users, Pill, Calculator, ClipboardList, Activity, Search, Heart, Lightbulb, Stethoscope } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
@@ -108,7 +109,9 @@ const Index = () => {
         <LanguageSelector />
       </div>
 
-      {/* Search bar */}
+      {/* Trial Banner */}
+      <TrialBanner />
+
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <input

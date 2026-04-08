@@ -361,5 +361,13 @@
       "calculator": "Calculadora de dosagem",
       "priority": "Suporte prioritário"
     }
+  },
+  "paywall": {
+    "title": "Seu período de teste expirou",
+    "description": "Assine agora para ter acesso completo a todas as funcionalidades do NurseAgenda e otimize sua rotina de enfermagem.",
+    "cta": "Assinar agora",
+    "ctaShort": "Assinar",
+    "hint": "Cancele a qualquer momento. Sem compromisso.",
+    "trialBanner": "Você tem {{days}} dia(s) restante(s) de teste gratuito"
   }
 }

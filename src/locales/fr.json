@@ -309,5 +309,40 @@
       "procedure": "Procédure",
       "daily_care": "Soins quotidiens"
     }
+  },
+  "subscription": {
+    "title": "Abonnement",
+    "subtitle": "Choisissez le plan idéal pour votre routine",
+    "monthly": "Mensuel",
+    "annual": "Annuel",
+    "perMonth": "mois",
+    "perYear": "an",
+    "savings": "🎉 2 mois gratuits !",
+    "popular": "Le plus populaire",
+    "yourPlan": "Votre plan",
+    "currentPlan": "Plan actuel",
+    "activePlan": "Plan actif",
+    "renewsAt": "Renouvellement le",
+    "subscribe": "S'abonner",
+    "changePlan": "Changer de plan",
+    "manage": "Gérer",
+    "success": "Abonnement activé avec succès !",
+    "canceled": "Abonnement annulé",
+    "features": {
+      "allModules": "Tous les modules",
+      "unlimitedPatients": "Patients illimités",
+      "checklists": "Checklists et modèles",
+      "vitalSigns": "Signes vitaux et graphiques",
+      "calculator": "Calculateur de dosage",
+      "priority": "Support prioritaire"
+    }
+  },
+  "paywall": {
+    "title": "Votre période d'essai a expiré",
+    "description": "Abonnez-vous maintenant pour accéder à toutes les fonctionnalités de NurseAgenda et optimisez votre routine infirmière.",
+    "cta": "S'abonner maintenant",
+    "ctaShort": "S'abonner",
+    "hint": "Annulez à tout moment. Sans engagement.",
+    "trialBanner": "Il vous reste {{days}} jour(s) d'essai gratuit"
   }
 }

@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode, useCallback, useMemo } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+
+const TRIAL_DAYS = 3;
 
 interface SubscriptionInfo {
   subscribed: boolean;
@@ -15,6 +17,9 @@ interface AuthContextType {
   loading: boolean;
   subscription: SubscriptionInfo;
   subscriptionLoading: boolean;
+  trialDaysLeft: number;
+  isTrialExpired: boolean;
+  hasAccess: boolean; // true if subscribed OR within trial
   checkSubscription: () => Promise<void>;
   signOut: () => Promise<void>;
 }
@@ -32,11 +37,22 @@ const AuthContext = createContext<AuthContextType>({
   loading: true,
   subscription: defaultSubscription,
   subscriptionLoading: true,
+  trialDaysLeft: TRIAL_DAYS,
+  isTrialExpired: false,
+  hasAccess: true,
   checkSubscription: async () => {},
   signOut: async () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
+
+function calcTrialDaysLeft(user: User | null): number {
+  if (!user?.created_at) return TRIAL_DAYS;
+  const created = new Date(user.created_at).getTime();
+  const now = Date.now();
+  const elapsed = (now - created) / (1000 * 60 * 60 * 24);
+  return Math.max(0, Math.ceil(TRIAL_DAYS - elapsed));
+}
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
@@ -99,12 +115,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => clearInterval(interval);
   }, [user, checkSubscription]);
 
+  const trialDaysLeft = useMemo(() => calcTrialDaysLeft(user), [user]);
+  const isTrialExpired = trialDaysLeft <= 0;
+  const hasAccess = subscription.subscribed || !isTrialExpired;
+
   const signOut = async () => {
     await supabase.auth.signOut();
   };
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, subscription, subscriptionLoading, checkSubscription, signOut }}>
+    <AuthContext.Provider value={{
+      user, session, loading,
+      subscription, subscriptionLoading,
+      trialDaysLeft, isTrialExpired, hasAccess,
+      checkSubscription, signOut,
+    }}>
       {children}
     </AuthContext.Provider>
   );

@@ -309,5 +309,40 @@
       "procedure": "Procedimiento",
       "daily_care": "Cuidados diarios"
     }
+  },
+  "subscription": {
+    "title": "Suscripción",
+    "subtitle": "Elige el plan ideal para tu rutina",
+    "monthly": "Mensual",
+    "annual": "Anual",
+    "perMonth": "mes",
+    "perYear": "año",
+    "savings": "🎉 ¡2 meses gratis!",
+    "popular": "Más popular",
+    "yourPlan": "Tu plan",
+    "currentPlan": "Plan actual",
+    "activePlan": "Plan activo",
+    "renewsAt": "Se renueva el",
+    "subscribe": "Suscribirse",
+    "changePlan": "Cambiar plan",
+    "manage": "Administrar",
+    "success": "¡Suscripción activada con éxito!",
+    "canceled": "Suscripción cancelada",
+    "features": {
+      "allModules": "Todos los módulos",
+      "unlimitedPatients": "Pacientes ilimitados",
+      "checklists": "Checklists y plantillas",
+      "vitalSigns": "Signos vitales y gráficos",
+      "calculator": "Calculadora de dosis",
+      "priority": "Soporte prioritario"
+    }
+  },
+  "paywall": {
+    "title": "Tu período de prueba ha expirado",
+    "description": "Suscríbete ahora para acceder a todas las funciones de NurseAgenda y optimiza tu rutina de enfermería.",
+    "cta": "Suscríbete ahora",
+    "ctaShort": "Suscribirse",
+    "hint": "Cancela en cualquier momento. Sin compromiso.",
+    "trialBanner": "Te quedan {{days}} día(s) de prueba gratuita"
   }
 }
