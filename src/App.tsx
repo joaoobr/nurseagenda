@@ -58,6 +58,9 @@ const App = () => (
                       <Route path="/admin" element={<Admin />} />
                       <Route path="/subscription" element={<Subscription />} />
                       <Route path="/more" element={<More />} />
+                      <Route path="/settings" element={<Settings />} />
+                      <Route path="/notifications" element={<Notifications />} />
+                      <Route path="/about" element={<About />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </AppLayout>
