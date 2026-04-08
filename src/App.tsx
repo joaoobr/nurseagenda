@@ -16,6 +16,9 @@ import Profile from "./pages/Profile";
 import NursingNotes from "./pages/NursingNotes";
 import VitalSigns from "./pages/VitalSigns";
 import More from "./pages/More";
+import Settings from "./pages/Settings";
+import Notifications from "./pages/Notifications";
+import About from "./pages/About";
 import Checklists from "./pages/Checklists";
 import Admin from "./pages/Admin";
 import Subscription from "./pages/Subscription";
@@ -55,6 +58,9 @@ const App = () => (
                       <Route path="/admin" element={<Admin />} />
                       <Route path="/subscription" element={<Subscription />} />
                       <Route path="/more" element={<More />} />
+                      <Route path="/settings" element={<Settings />} />
+                      <Route path="/notifications" element={<Notifications />} />
+                      <Route path="/about" element={<About />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </AppLayout>
