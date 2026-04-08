@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'nurseagenda',
   webDir: 'dist',
   server: {
-    url: 'https://5c2ab7be-d38a-48ab-bd83-8d57c8e50956.lovableproject.com?forceHideBadge=true',
+    url: 'https://nurseagenda.youhub.app?forceHideBadge=true',
     cleartext: true
   }
 };
