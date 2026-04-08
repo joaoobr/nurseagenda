@@ -20,6 +20,8 @@ import Checklists from "./pages/Checklists";
 import Admin from "./pages/Admin";
 import Subscription from "./pages/Subscription";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import '@/i18n';
 
 const queryClient = new QueryClient();
@@ -33,6 +35,8 @@ const App = () => (
         <AuthProvider>
           <Routes>
             <Route path="/auth" element={<Auth />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route
               path="/*"
               element={
