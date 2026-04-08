@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import SubscriptionGate from "@/components/SubscriptionGate";
 import AppLayout from "@/components/layout/AppLayout";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
@@ -46,21 +47,25 @@ const App = () => (
                 <ProtectedRoute>
                   <AppLayout>
                     <Routes>
+                      {/* Free routes - always accessible */}
                       <Route path="/" element={<Index />} />
-                      <Route path="/schedule" element={<Schedule />} />
-                      <Route path="/patients" element={<Patients />} />
-                      <Route path="/medications" element={<Medications />} />
-                      <Route path="/calculator" element={<Calculator />} />
-                      <Route path="/profile" element={<Profile />} />
-                      <Route path="/nursing-notes" element={<NursingNotes />} />
-                      <Route path="/vital-signs" element={<VitalSigns />} />
-                      <Route path="/checklists" element={<Checklists />} />
-                      <Route path="/admin" element={<Admin />} />
                       <Route path="/subscription" element={<Subscription />} />
+                      <Route path="/profile" element={<Profile />} />
                       <Route path="/more" element={<More />} />
                       <Route path="/settings" element={<Settings />} />
                       <Route path="/notifications" element={<Notifications />} />
                       <Route path="/about" element={<About />} />
+                      <Route path="/admin" element={<Admin />} />
+
+                      {/* Premium routes - gated by subscription */}
+                      <Route path="/schedule" element={<SubscriptionGate><Schedule /></SubscriptionGate>} />
+                      <Route path="/patients" element={<SubscriptionGate><Patients /></SubscriptionGate>} />
+                      <Route path="/medications" element={<SubscriptionGate><Medications /></SubscriptionGate>} />
+                      <Route path="/calculator" element={<SubscriptionGate><Calculator /></SubscriptionGate>} />
+                      <Route path="/nursing-notes" element={<SubscriptionGate><NursingNotes /></SubscriptionGate>} />
+                      <Route path="/vital-signs" element={<SubscriptionGate><VitalSigns /></SubscriptionGate>} />
+                      <Route path="/checklists" element={<SubscriptionGate><Checklists /></SubscriptionGate>} />
+
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </AppLayout>
