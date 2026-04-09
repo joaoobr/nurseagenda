@@ -17,10 +17,12 @@ const Subscription = () => {
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
 
+  const [pollingSub, setPollingSub] = useState(false);
+
   // Poll aggressively after successful checkout to detect new subscription
   useEffect(() => {
-    if (searchParams.get('success') === 'true') {
-      toast.success(t('subscription.success'));
+    if (searchParams.get('success') === 'true' && !subscription.subscribed) {
+      setPollingSub(true);
       let cancelled = false;
       let attempts = 0;
       const MAX_ATTEMPTS = 15;
@@ -29,16 +31,18 @@ const Subscription = () => {
         while (!cancelled && attempts < MAX_ATTEMPTS) {
           attempts++;
           await checkSubscription();
-          // Wait a moment then check if subscribed (via re-render)
           await new Promise(r => setTimeout(r, 2000));
         }
+        if (!cancelled) setPollingSub(false);
       };
       poll();
       return () => { cancelled = true; };
+    } else if (searchParams.get('success') === 'true' && subscription.subscribed) {
+      setPollingSub(false);
     } else if (searchParams.get('canceled') === 'true') {
       toast.info(t('subscription.canceled'));
     }
-  }, [searchParams, checkSubscription, t]);
+  }, [searchParams, checkSubscription, t, subscription.subscribed]);
 
   const handleCheckout = async (priceId: string) => {
     setCheckoutLoading(priceId);
