@@ -327,6 +327,7 @@
     "changePlan": "Cambiar plan",
     "manage": "Administrar",
     "success": "¡Suscripción activada con éxito!",
+    "syncing": "Sincronizando tu suscripción...",
     "canceled": "Suscripción cancelada",
     "features": {
       "allModules": "Todos los módulos",
