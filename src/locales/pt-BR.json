@@ -352,6 +352,7 @@
     "changePlan": "Trocar plano",
     "manage": "Gerenciar",
     "success": "Assinatura ativada com sucesso!",
+    "syncing": "Sincronizando sua assinatura...",
     "canceled": "Assinatura cancelada",
     "features": {
       "allModules": "Todos os módulos",

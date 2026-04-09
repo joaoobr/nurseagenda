@@ -17,14 +17,32 @@ const Subscription = () => {
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
 
+  const [pollingSub, setPollingSub] = useState(false);
+
+  // Poll aggressively after successful checkout to detect new subscription
   useEffect(() => {
-    if (searchParams.get('success') === 'true') {
-      toast.success(t('subscription.success'));
-      checkSubscription();
+    if (searchParams.get('success') === 'true' && !subscription.subscribed) {
+      setPollingSub(true);
+      let cancelled = false;
+      let attempts = 0;
+      const MAX_ATTEMPTS = 15;
+
+      const poll = async () => {
+        while (!cancelled && attempts < MAX_ATTEMPTS) {
+          attempts++;
+          await checkSubscription();
+          await new Promise(r => setTimeout(r, 2000));
+        }
+        if (!cancelled) setPollingSub(false);
+      };
+      poll();
+      return () => { cancelled = true; };
+    } else if (searchParams.get('success') === 'true' && subscription.subscribed) {
+      setPollingSub(false);
     } else if (searchParams.get('canceled') === 'true') {
       toast.info(t('subscription.canceled'));
     }
-  }, [searchParams, checkSubscription, t]);
+  }, [searchParams, checkSubscription, t, subscription.subscribed]);
 
   const handleCheckout = async (priceId: string) => {
     setCheckoutLoading(priceId);
@@ -111,6 +129,15 @@ const Subscription = () => {
         </Button>
       </div>
       <p className="text-sm text-muted-foreground mb-6">{t('subscription.subtitle')}</p>
+
+      {pollingSub && !subscription.subscribed && (
+        <Card className="mb-6 border-primary/30 bg-primary/5">
+          <CardContent className="pt-4 pb-4 flex items-center gap-3">
+            <Loader2 className="h-5 w-5 animate-spin text-primary" />
+            <p className="text-sm text-foreground">{t('subscription.syncing')}</p>
+          </CardContent>
+        </Card>
+      )}
 
       {subscription.subscribed && (
         <Card className="mb-6 border-primary/30 bg-primary/5">

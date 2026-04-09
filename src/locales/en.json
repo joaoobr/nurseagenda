@@ -352,6 +352,7 @@
     "changePlan": "Change plan",
     "manage": "Manage",
     "success": "Subscription activated successfully!",
+    "syncing": "Syncing your subscription...",
     "canceled": "Subscription canceled",
     "features": {
       "allModules": "All modules",
