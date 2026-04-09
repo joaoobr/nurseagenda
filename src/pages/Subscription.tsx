@@ -134,7 +134,7 @@ const Subscription = () => {
         <Card className="mb-6 border-primary/30 bg-primary/5">
           <CardContent className="pt-4 pb-4 flex items-center gap-3">
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
-            <p className="text-sm text-foreground">{t('subscription.syncing', 'Sincronizando sua assinatura...')}</p>
+            <p className="text-sm text-foreground">{t('subscription.syncing')}</p>
           </CardContent>
         </Card>
       )}
