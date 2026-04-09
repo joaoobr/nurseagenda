@@ -78,7 +78,10 @@ serve(async (req) => {
     if (hasActiveSub) {
       const subscription = subscriptions.data[0];
       // current_period_end can be a number (unix timestamp) or already a string
-      const endRaw = subscription.current_period_end;
+      // Try top-level first, then fall back to items level
+      const endRaw = subscription.current_period_end 
+        ?? subscription.items?.data?.[0]?.current_period_end
+        ?? null;
       logStep("Raw current_period_end", { value: endRaw, type: typeof endRaw });
       if (typeof endRaw === 'number') {
         subscriptionEnd = new Date(endRaw * 1000).toISOString();
@@ -89,7 +92,7 @@ serve(async (req) => {
       }
       productId = subscription.items.data[0].price.product;
       priceId = subscription.items.data[0].price.id;
-      logStep("Active subscription found", { priceId, productId, subscriptionEnd, endRaw });
+      logStep("Active subscription found", { priceId, productId, subscriptionEnd });
     } else {
       logStep("No active subscription");
     }
