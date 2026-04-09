@@ -130,6 +130,15 @@ const Subscription = () => {
       </div>
       <p className="text-sm text-muted-foreground mb-6">{t('subscription.subtitle')}</p>
 
+      {pollingSub && !subscription.subscribed && (
+        <Card className="mb-6 border-primary/30 bg-primary/5">
+          <CardContent className="pt-4 pb-4 flex items-center gap-3">
+            <Loader2 className="h-5 w-5 animate-spin text-primary" />
+            <p className="text-sm text-foreground">{t('subscription.syncing', 'Sincronizando sua assinatura...')}</p>
+          </CardContent>
+        </Card>
+      )}
+
       {subscription.subscribed && (
         <Card className="mb-6 border-primary/30 bg-primary/5">
           <CardContent className="pt-4 pb-4 flex items-center justify-between">
