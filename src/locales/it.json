@@ -327,6 +327,7 @@
     "changePlan": "Cambia piano",
     "manage": "Gestisci",
     "success": "Abbonamento attivato con successo!",
+    "syncing": "Sincronizzazione dell'abbonamento...",
     "canceled": "Abbonamento annullato",
     "features": {
       "allModules": "Tutti i moduli",
