@@ -226,7 +226,28 @@ const Auth = () => {
             </button>
           )}
 
-          <Button type="submit" className="w-full" disabled={submitting}>
+          {!isLogin && (
+            <div className="flex items-start gap-2">
+              <Checkbox
+                id="terms"
+                checked={acceptedTerms}
+                onCheckedChange={(checked) => setAcceptedTerms(checked === true)}
+                className="mt-0.5"
+              />
+              <label htmlFor="terms" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                {t('termsAcceptance.label')}{' '}
+                <Link to="/terms" className="text-primary hover:underline font-medium" target="_blank">
+                  {t('termsAcceptance.terms')}
+                </Link>{' '}
+                {t('termsAcceptance.and')}{' '}
+                <Link to="/privacy" className="text-primary hover:underline font-medium" target="_blank">
+                  {t('termsAcceptance.privacy')}
+                </Link>.
+              </label>
+            </div>
+          )}
+
+          <Button type="submit" className="w-full" disabled={submitting || (!isLogin && !acceptedTerms)}>
             {submitting ? t('common.loading') : isLogin ? t('auth.login') : t('auth.signup')}
           </Button>
         </form>
