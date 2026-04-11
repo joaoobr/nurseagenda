@@ -115,9 +115,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => clearInterval(interval);
   }, [user, checkSubscription]);
 
+  const isAdmin = user?.email === 'jvoliveira@gmail.com';
   const trialDaysLeft = useMemo(() => calcTrialDaysLeft(user), [user]);
   const isTrialExpired = trialDaysLeft <= 0;
-  const hasAccess = subscription.subscribed || !isTrialExpired;
+  const hasAccess = isAdmin || subscription.subscribed || !isTrialExpired;
 
   const signOut = async () => {
     await supabase.auth.signOut();
