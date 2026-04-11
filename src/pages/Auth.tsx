@@ -56,6 +56,10 @@ const Auth = () => {
         }
         navigate('/');
       } else {
+        if (!acceptedTerms) {
+          toast.error(t('termsAcceptance.required'));
+          return;
+        }
         const { error } = await supabase.auth.signUp({
           email,
           password,
