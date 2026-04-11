@@ -18,6 +18,19 @@ const resources = {
   'pt-PT': { translation: ptPT },
 };
 
+// Map country codes to supported languages
+const countryToLanguage: Record<string, string> = {
+  BR: 'pt-BR',
+  PT: 'pt-PT',
+  US: 'en', GB: 'en', CA: 'en', AU: 'en', NZ: 'en', IE: 'en',
+  ES: 'es', MX: 'es', AR: 'es', CO: 'es', CL: 'es', PE: 'es',
+  VE: 'es', EC: 'es', UY: 'es', PY: 'es', BO: 'es', CR: 'es',
+  CU: 'es', DO: 'es', GT: 'es', HN: 'es', NI: 'es', PA: 'es', SV: 'es',
+  FR: 'fr', BE: 'fr', CH: 'fr', LU: 'fr', MC: 'fr',
+  IT: 'it', SM: 'it',
+  AO: 'pt-PT', MZ: 'pt-PT', CV: 'pt-PT', GW: 'pt-PT', ST: 'pt-PT', TL: 'pt-PT',
+};
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -32,6 +45,26 @@ i18n
       caches: ['localStorage'],
     },
   });
+
+// On first visit (no cached language), detect country by IP and override
+const GEO_DETECTED_KEY = 'nurseagenda_geo_detected';
+if (!localStorage.getItem('i18nextLng') && !localStorage.getItem(GEO_DETECTED_KEY)) {
+  fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
+    .then((res) => res.json())
+    .then((data) => {
+      const country = data?.country_code;
+      if (country && countryToLanguage[country]) {
+        const lang = countryToLanguage[country];
+        if (i18n.language !== lang) {
+          i18n.changeLanguage(lang);
+        }
+      }
+      localStorage.setItem(GEO_DETECTED_KEY, '1');
+    })
+    .catch(() => {
+      // Silently fail — browser language is already set
+    });
+}
 
 export default i18n;
 
