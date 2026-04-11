@@ -345,5 +345,16 @@
     "ctaShort": "Abbonati",
     "hint": "Cancella in qualsiasi momento. Senza impegno.",
     "trialBanner": "Ti restano {{days}} giorno/i di prova gratuita"
+  },
+  "disclaimer": {
+    "healthData": "Questa applicazione gestisce dati sanitari sensibili. Non sostituisce la cartella clinica ufficiale. L'utente è responsabile del contenuto inserito e della conformità alle leggi sulla protezione dei dati.",
+    "notMedicalDevice": "NurseAgenda non è un dispositivo medico. I risultati di calcolatrici e strumenti devono essere validati dal professionista."
+  },
+  "termsAcceptance": {
+    "label": "Ho letto e accetto i",
+    "terms": "Termini di utilizzo",
+    "and": "e la",
+    "privacy": "Informativa sulla privacy",
+    "required": "È necessario accettare i termini per continuare"
   }
 }
