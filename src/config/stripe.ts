@@ -2,7 +2,7 @@
 export const STRIPE_PLANS = {
   monthly: {
     priceId: 'price_1TL8EqAJzuBfJTxnL1QGrJjd',
-    productId: 'prod_UIDH9vGcamKztC', // TODO: update with production product ID
+    productId: 'prod_UJlm8m5AcKknBb',
     price: 5.50,
     interval: 'month' as const,
   },
