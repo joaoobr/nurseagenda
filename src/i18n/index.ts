@@ -49,21 +49,42 @@ i18n
 // On first visit (no cached language), detect country by IP and override
 const GEO_DETECTED_KEY = 'nurseagenda_geo_detected';
 if (!localStorage.getItem('i18nextLng') && !localStorage.getItem(GEO_DETECTED_KEY)) {
-  fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
-    .then((res) => res.json())
-    .then((data) => {
-      const country = data?.country_code;
-      if (country && countryToLanguage[country]) {
-        const lang = countryToLanguage[country];
-        if (i18n.language !== lang) {
-          i18n.changeLanguage(lang);
+  // Try multiple geo APIs for reliability
+  const geoApis = [
+    'https://api.country.is',
+    'https://ipapi.co/country/',
+  ];
+
+  const detectCountry = async () => {
+    for (const url of geoApis) {
+      try {
+        const res = await fetch(url, { signal: AbortSignal.timeout(3000) });
+        if (!res.ok) continue;
+        
+        let country: string | undefined;
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('json')) {
+          const data = await res.json();
+          country = data?.country;
+        } else {
+          country = (await res.text()).trim();
         }
+
+        if (country && countryToLanguage[country]) {
+          const lang = countryToLanguage[country];
+          if (i18n.language !== lang) {
+            i18n.changeLanguage(lang);
+          }
+          break;
+        }
+      } catch {
+        continue;
       }
-      localStorage.setItem(GEO_DETECTED_KEY, '1');
-    })
-    .catch(() => {
-      // Silently fail — browser language is already set
-    });
+    }
+    localStorage.setItem(GEO_DETECTED_KEY, '1');
+  };
+
+  detectCountry();
 }
 
 export default i18n;
