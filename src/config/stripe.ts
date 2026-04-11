@@ -8,7 +8,7 @@ export const STRIPE_PLANS = {
   },
   annual: {
     priceId: 'price_1TL8FkAJzuBfJTxnBIX4D9a6',
-    productId: 'prod_UIDHfIePZzKu6E', // TODO: update with production product ID
+    productId: 'prod_UJln5k7VDPm0cY',
     price: 55.00,
     interval: 'year' as const,
   },
