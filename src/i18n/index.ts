@@ -66,7 +66,7 @@ const countryToLanguage: Record<string, string> = {
 const geoDetector = {
   name: 'geoDetector',
   async: true,
-  detect(callback: (lng: string) => void) {
+  lookup(callback: (lng: string) => void) {
     fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
       .then((res) => res.json())
       .then((data) => {
@@ -74,7 +74,6 @@ const geoDetector = {
         if (country && countryToLanguage[country]) {
           callback(countryToLanguage[country]);
         }
-        // If no match, don't call back — let other detectors handle it
       })
       .catch(() => {
         // Silently fail — navigator detector will be used as fallback
