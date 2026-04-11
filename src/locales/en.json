@@ -370,5 +370,16 @@
     "ctaShort": "Subscribe",
     "hint": "Cancel anytime. No commitment.",
     "trialBanner": "You have {{days}} day(s) left on your free trial"
+  },
+  "disclaimer": {
+    "healthData": "This app handles sensitive health data. It does not replace official medical records. You are responsible for the content entered and compliance with data protection laws.",
+    "notMedicalDevice": "NurseAgenda is not a medical device. Calculator and tool results must be validated by the professional."
+  },
+  "termsAcceptance": {
+    "label": "I have read and accept the",
+    "terms": "Terms of Use",
+    "and": "and the",
+    "privacy": "Privacy Policy",
+    "required": "You must accept the terms to continue"
   }
 }

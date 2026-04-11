@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 import { Stethoscope, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
@@ -24,6 +25,7 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   if (loading) {
     return (
@@ -54,6 +56,10 @@ const Auth = () => {
         }
         navigate('/');
       } else {
+        if (!acceptedTerms) {
+          toast.error(t('termsAcceptance.required'));
+          return;
+        }
         const { error } = await supabase.auth.signUp({
           email,
           password,
@@ -220,7 +226,28 @@ const Auth = () => {
             </button>
           )}
 
-          <Button type="submit" className="w-full" disabled={submitting}>
+          {!isLogin && (
+            <div className="flex items-start gap-2">
+              <Checkbox
+                id="terms"
+                checked={acceptedTerms}
+                onCheckedChange={(checked) => setAcceptedTerms(checked === true)}
+                className="mt-0.5"
+              />
+              <label htmlFor="terms" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                {t('termsAcceptance.label')}{' '}
+                <Link to="/terms" className="text-primary hover:underline font-medium" target="_blank">
+                  {t('termsAcceptance.terms')}
+                </Link>{' '}
+                {t('termsAcceptance.and')}{' '}
+                <Link to="/privacy" className="text-primary hover:underline font-medium" target="_blank">
+                  {t('termsAcceptance.privacy')}
+                </Link>.
+              </label>
+            </div>
+          )}
+
+          <Button type="submit" className="w-full" disabled={submitting || (!isLogin && !acceptedTerms)}>
             {submitting ? t('common.loading') : isLogin ? t('auth.login') : t('auth.signup')}
           </Button>
         </form>

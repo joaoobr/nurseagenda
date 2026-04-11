@@ -370,5 +370,16 @@
     "ctaShort": "Assinar",
     "hint": "Cancele a qualquer momento. Sem compromisso.",
     "trialBanner": "Você tem {{days}} dia(s) restante(s) de teste gratuito"
+  },
+  "disclaimer": {
+    "healthData": "Este aplicativo lida com dados sensíveis de saúde. Não substitui prontuário médico oficial. Você é responsável pelo conteúdo inserido e pela conformidade com a LGPD.",
+    "notMedicalDevice": "O NurseAgenda não é um dispositivo médico. Resultados de calculadoras e ferramentas devem ser validados pelo profissional."
+  },
+  "termsAcceptance": {
+    "label": "Li e aceito os",
+    "terms": "Termos de Uso",
+    "and": "e a",
+    "privacy": "Política de Privacidade",
+    "required": "Você deve aceitar os termos para continuar"
   }
 }

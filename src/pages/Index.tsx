@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import TrialBanner from '@/components/TrialBanner';
 import { Calendar, Users, Pill, Calculator, ClipboardList, Activity, Search, Heart, Lightbulb, Stethoscope } from 'lucide-react';
+import HealthDisclaimer from '@/components/HealthDisclaimer';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '@/components/LanguageSelector';
 import { fetchDailyQuote, fetchDailyTip } from '@/services/dailyContent';
@@ -206,6 +207,11 @@ const Index = () => {
             );
           })}
         </div>
+      </div>
+
+      {/* Health data disclaimer */}
+      <div className="pb-4">
+        <HealthDisclaimer />
       </div>
     </div>
   );
