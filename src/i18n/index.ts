@@ -31,6 +31,10 @@ const countryToLanguage: Record<string, string> = {
   AO: 'pt-PT', MZ: 'pt-PT', CV: 'pt-PT', GW: 'pt-PT', ST: 'pt-PT', TL: 'pt-PT',
 };
 
+// Check if this is a first visit BEFORE i18next caches anything
+const GEO_DETECTED_KEY = 'nurseagenda_geo_detected';
+const isFirstVisit = !localStorage.getItem(GEO_DETECTED_KEY);
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -46,10 +50,8 @@ i18n
     },
   });
 
-// On first visit (no cached language), detect country by IP and override
-const GEO_DETECTED_KEY = 'nurseagenda_geo_detected';
-if (!localStorage.getItem('i18nextLng') && !localStorage.getItem(GEO_DETECTED_KEY)) {
-  // Try multiple geo APIs for reliability
+// On first visit, detect country by IP and override the browser-detected language
+if (isFirstVisit) {
   const geoApis = [
     'https://api.country.is',
     'https://ipapi.co/country/',
@@ -60,7 +62,7 @@ if (!localStorage.getItem('i18nextLng') && !localStorage.getItem(GEO_DETECTED_KE
       try {
         const res = await fetch(url, { signal: AbortSignal.timeout(3000) });
         if (!res.ok) continue;
-        
+
         let country: string | undefined;
         const contentType = res.headers.get('content-type') || '';
         if (contentType.includes('json')) {
