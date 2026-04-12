@@ -46,6 +46,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <DeepLinkHandler />
         <AuthProvider>
           <Routes>
             <Route path="/auth" element={<Auth />} />
