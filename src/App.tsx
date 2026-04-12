@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,8 +28,17 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import '@/i18n';
+import { initDeepLinkListener } from '@/lib/deepLinks';
 
 const queryClient = new QueryClient();
+
+const DeepLinkHandler = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    initDeepLinkListener(navigate);
+  }, [navigate]);
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -36,6 +46,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <DeepLinkHandler />
         <AuthProvider>
           <Routes>
             <Route path="/auth" element={<Auth />} />
