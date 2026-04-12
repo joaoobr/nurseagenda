@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Browser } from '@capacitor/browser';
+import { Capacitor } from '@capacitor/core';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -87,13 +89,32 @@ const Auth = () => {
   };
 
   const handleGoogleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: getOAuthRedirectUrl(),
-      },
-    });
-    if (error) toast.error(error.message);
+    try {
+      const isNative = Capacitor.isNativePlatform();
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: getOAuthRedirectUrl(),
+          skipBrowserRedirect: isNative,
+        },
+      });
+
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
+
+      if (isNative) {
+        if (!data?.url) {
+          toast.error(t('common.error'));
+          return;
+        }
+
+        await Browser.open({ url: data.url });
+      }
+    } catch (err) {
+      toast.error(t('common.error'));
+    }
   };
 
   if (showVerificationMessage) {
