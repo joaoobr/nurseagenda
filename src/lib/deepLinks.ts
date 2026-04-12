@@ -97,7 +97,7 @@ export function initDeepLinkListener(navigate: (path: string) => void) {
  */
 export function getOAuthRedirectUrl(): string {
   if (Capacitor.isNativePlatform()) {
-    return NATIVE_OAUTH_REDIRECT_URL;
+    return NATIVE_OAUTH_BRIDGE_URL;
   }
   return window.location.origin;
 }
