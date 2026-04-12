@@ -3,7 +3,8 @@ import { Browser } from '@capacitor/browser';
 import { Capacitor } from '@capacitor/core';
 import { supabase } from '@/integrations/supabase/client';
 
-const NATIVE_OAUTH_REDIRECT_URL = 'app.nurseagenda.mobile://login-callback';
+const SUPABASE_URL = 'https://igylprpvqunjpfsagnkr.supabase.co';
+const NATIVE_OAUTH_BRIDGE_URL = `${SUPABASE_URL}/functions/v1/oauth-native-callback`;
 const NATIVE_OAUTH_CALLBACK_HOST = 'login-callback';
 
 function isNativeOAuthCallback(url: URL) {
@@ -96,7 +97,7 @@ export function initDeepLinkListener(navigate: (path: string) => void) {
  */
 export function getOAuthRedirectUrl(): string {
   if (Capacitor.isNativePlatform()) {
-    return NATIVE_OAUTH_REDIRECT_URL;
+    return NATIVE_OAUTH_BRIDGE_URL;
   }
   return window.location.origin;
 }
