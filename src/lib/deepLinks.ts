@@ -4,6 +4,28 @@ import { Capacitor } from '@capacitor/core';
 import { supabase } from '@/integrations/supabase/client';
 
 const NATIVE_OAUTH_REDIRECT_URL = 'app.nurseagenda.mobile://login-callback';
+const NATIVE_OAUTH_CALLBACK_HOST = 'login-callback';
+
+function isNativeOAuthCallback(url: URL) {
+  return url.protocol === 'app.nurseagenda.mobile:' && url.host === NATIVE_OAUTH_CALLBACK_HOST;
+}
+
+function getDeepLinkPath(url: URL) {
+  if (url.pathname && url.pathname !== '/') {
+    return `${url.pathname}${url.search}`;
+  }
+
+  if (
+    url.protocol !== 'http:' &&
+    url.protocol !== 'https:' &&
+    url.host &&
+    url.host !== NATIVE_OAUTH_CALLBACK_HOST
+  ) {
+    return `/${url.host}${url.search}`;
+  }
+
+  return url.search ? `/${url.search}` : '/';
+}
 
 /**
  * Initialize deep link handling for Capacitor.
@@ -14,12 +36,31 @@ export function initDeepLinkListener(navigate: (path: string) => void) {
   if (!Capacitor.isNativePlatform()) return;
 
   App.addListener('appUrlOpen', async (event: URLOpenListenerEvent) => {
-    const url = new URL(event.url);
+    let url: URL;
+
+    try {
+      url = new URL(event.url);
+    } catch (error) {
+      console.error('Invalid deep link URL:', event.url, error);
+      return;
+    }
 
     try {
       await Browser.close();
     } catch {
       // no-op: browser may already be closed
+    }
+
+    const code = url.searchParams.get('code');
+
+    if (isNativeOAuthCallback(url) && code) {
+      try {
+        await supabase.auth.exchangeCodeForSession(code);
+        navigate('/');
+        return;
+      } catch (error) {
+        console.error('Error exchanging auth code from deep link:', error);
+      }
     }
 
     // Handle OAuth callback — the URL contains access_token and refresh_token
@@ -44,8 +85,7 @@ export function initDeepLinkListener(navigate: (path: string) => void) {
     }
 
     // Handle regular deep links — navigate to the path
-    const path = url.pathname && url.pathname !== '/' ? url.pathname : '/';
-    navigate(`${path}${url.search}`);
+    navigate(getDeepLinkPath(url));
   });
 }
 
