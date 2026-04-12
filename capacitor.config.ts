@@ -7,6 +7,11 @@ const config: CapacitorConfig = {
   server: {
     url: 'https://nurseagenda.youhub.app?forceHideBadge=true',
     cleartext: true
+  },
+  plugins: {
+    App: {
+      // Android App Links will be configured via AndroidManifest.xml
+    }
   }
 };
 
