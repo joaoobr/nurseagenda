@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Calendar, Users, Pill, Home, Menu } from 'lucide-react';
+import { Calendar, GraduationCap, Pill, Home, Menu } from 'lucide-react';
 
 const BottomNav = () => {
   const { t } = useTranslation();
@@ -10,7 +10,7 @@ const BottomNav = () => {
   const navItems = [
     { path: '/', icon: Home, label: t('nav.home') },
     { path: '/schedule', icon: Calendar, label: t('nav.schedule') },
-    { path: '/patients', icon: Users, label: t('nav.patients') },
+    { path: '/studies', icon: GraduationCap, label: t('nav.studies') },
     { path: '/medications', icon: Pill, label: t('nav.medications') },
     { path: '/more', icon: Menu, label: t('nav.more') },
   ];
