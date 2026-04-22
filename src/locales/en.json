@@ -430,6 +430,139 @@
       "tip_2": "Practice dose and drip calculations with short daily examples.",
       "tip_3": "Turn protocols into checklists to memorize critical steps.",
       "tip_4": "Review warning signs by system: respiratory, cardiovascular, neurological and metabolic."
+    },
+    "dailyTips": {
+      "title": "Study tip of the day",
+      "day": "Day {{day}} of 365",
+      "items": [
+        "Review one normal vital sign range and one warning sign before your next shift.",
+        "When studying medications, link class, indication, adverse effects and nursing care.",
+        "Practice explaining a procedure in simple words as if guiding a patient.",
+        "Create small safety checklists to turn theory into practical routine.",
+        "Spend 10 minutes reviewing common abbreviations: BP, HR, RR, SpO₂, IM, IV, SC and PO.",
+        "When studying a topic, ask: what do I observe, what do I document and when do I escalate?",
+        "Practice one drip-rate calculation to keep your math agile.",
+        "Review hypo- and hyperglycemia by comparing symptoms and initial actions.",
+        "Make flashcards for administration routes and common sites.",
+        "Review standard precautions: hand hygiene, PPE, disposal and exposure prevention.",
+        "Read a short protocol and turn the main steps into three bullets.",
+        "Practice clinical reasoning: abnormal finding + possible cause + first safe action."
+      ]
+    },
+    "categoryDetails": {
+      "vitals": {
+        "intro": "A foundation for assessing clinical stability and early deterioration.",
+        "sections": [
+          {
+            "title": "What to observe",
+            "items": [
+              "Blood pressure, heart rate, respiratory rate, temperature, pain and SpO₂.",
+              "Compare current values with history, diagnosis, medications and complaints.",
+              "Observe associated signs: sweating, pallor, dyspnea, confusion, drowsiness or intense pain."
+            ]
+          },
+          {
+            "title": "Warning points",
+            "items": [
+              "Low SpO₂, altered consciousness, hypotension, persistent tachycardia or high fever need prompt attention.",
+              "A worsening trend can matter more than one isolated value.",
+              "Reassess after intervention and document clinical response."
+            ]
+          },
+          {
+            "title": "Remember",
+            "items": [
+              "Always document time, patient position, oxygen device and action taken.",
+              "Vital signs are objective data but must be interpreted with clinical context."
+            ]
+          }
+        ]
+      },
+      "medications": {
+        "intro": "Safety summary for medication administration and review.",
+        "sections": [
+          {
+            "title": "Before administration",
+            "items": [
+              "Confirm patient, medication, dose, route, time, dilution, expiry and prescription.",
+              "Check allergies, interactions, duplicates and required parameters before the dose.",
+              "If prescription or dose is unclear, stop and confirm before administration."
+            ]
+          },
+          {
+            "title": "During and after",
+            "items": [
+              "Watch for immediate reactions, pain, extravasation, nausea, dizziness or allergic signs.",
+              "Document administration, time, route, site when applicable and incidents.",
+              "High-alert medications require double-checking according to institutional protocol."
+            ]
+          },
+          {
+            "title": "To study",
+            "items": [
+              "Review common classes: analgesics, antibiotics, anticoagulants, insulins and antihypertensives.",
+              "Link each class to key nursing care points."
+            ]
+          }
+        ]
+      },
+      "safety": {
+        "intro": "Best practices to reduce risk and protect patient, student and team.",
+        "sections": [
+          {
+            "title": "Priorities",
+            "items": [
+              "Correct identification before any care, collection, medication or procedure.",
+              "Hand hygiene at indicated moments and proper PPE use.",
+              "Safe environment: call bell reachable, rails per risk, dry floor and locked bed."
+            ]
+          },
+          {
+            "title": "Common risks",
+            "items": [
+              "Falls, pressure injury, allergies, infection, medication error and communication failure.",
+              "Use objective handoff with situation, background, assessment and recommendation.",
+              "Report incidents and near misses to improve processes."
+            ]
+          },
+          {
+            "title": "Remember",
+            "items": [
+              "Safety starts before technique: confirm, prepare, communicate and document.",
+              "A simple checklist reduces omissions in repetitive routines."
+            ]
+          }
+        ]
+      },
+      "procedures": {
+        "intro": "Quick structure to study and perform procedures safely.",
+        "sections": [
+          {
+            "title": "Before",
+            "items": [
+              "Read the order or indication, confirm identity, explain the procedure and gather supplies.",
+              "Assess contraindications, allergies, pain, privacy and need for help.",
+              "Organize the environment to avoid interruptions and contamination."
+            ]
+          },
+          {
+            "title": "During",
+            "items": [
+              "Maintain clean or sterile technique according to the procedure.",
+              "Watch for discomfort, bleeding, vital sign changes or unexpected reactions.",
+              "Communicate incidents and ask for support when risk appears."
+            ]
+          },
+          {
+            "title": "After",
+            "items": [
+              "Dispose supplies correctly, perform hand hygiene and leave the patient safe.",
+              "Document procedure, findings, supplies used and patient response.",
+              "Monitor expected effects and signs of complications."
+            ]
+          }
+        ]
+      }
     }
   }
 }
