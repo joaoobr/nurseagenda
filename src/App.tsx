@@ -25,6 +25,7 @@ import Checklists from "./pages/Checklists";
 import Admin from "./pages/Admin";
 import Subscription from "./pages/Subscription";
 import Studies from "./pages/Studies";
+import StudyTopic from "./pages/StudyTopic";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -69,6 +70,7 @@ const App = () => (
                       <Route path="/about" element={<About />} />
                       <Route path="/admin" element={<Admin />} />
                       <Route path="/studies" element={<Studies />} />
+                      <Route path="/studies/:topic" element={<StudyTopic />} />
 
                       {/* Premium routes - gated by subscription */}
                       <Route path="/schedule" element={<SubscriptionGate><Schedule /></SubscriptionGate>} />

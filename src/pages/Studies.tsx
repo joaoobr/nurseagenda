@@ -11,17 +11,10 @@ import {
   ShieldCheck,
   Stethoscope,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 
 const studyCategories = [
   { icon: HeartPulse, key: 'vitals', items: ['vitals_1', 'vitals_2', 'vitals_3'] },
@@ -76,56 +69,28 @@ const Studies = () => {
       <section className="grid grid-cols-2 gap-3">
         {studyCategories.map((category) => {
           const Icon = category.icon;
-          const details = t(`studies.categoryDetails.${category.key}.sections`, { returnObjects: true }) as Array<{
-            title: string;
-            items: string[];
-          }>;
 
           return (
-            <Dialog key={category.key}>
-              <DialogTrigger asChild>
-                <button className="rounded-xl border border-border bg-card p-4 text-left shadow-none transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <h2 className="text-base font-semibold leading-tight text-card-foreground">
-                        {t(`studies.categories.${category.key}.title`)}
-                      </h2>
-                      <p className="text-xs text-muted-foreground leading-relaxed mt-2">
-                        {t(`studies.categories.${category.key}.description`)}
-                      </p>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
-                  </div>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md max-h-[85vh] overflow-y-auto">
-                <DialogHeader>
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <DialogTitle>{t(`studies.categories.${category.key}.title`)}</DialogTitle>
-                  <DialogDescription>{t(`studies.categoryDetails.${category.key}.intro`)}</DialogDescription>
-                </DialogHeader>
-                <div className="space-y-4">
-                  {details.map((section) => (
-                    <section key={section.title} className="space-y-2">
-                      <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
-                      <div className="space-y-2">
-                        {section.items.map((item) => (
-                          <div key={item} className="flex items-start gap-2 text-sm text-foreground leading-relaxed">
-                            <CheckCircle2 className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-                  ))}
+            <Link
+              key={category.key}
+              to={`/studies/${category.key}`}
+              className="rounded-xl border border-border bg-card p-4 text-left shadow-none transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h2 className="text-base font-semibold leading-tight text-card-foreground">
+                    {t(`studies.categories.${category.key}.title`)}
+                  </h2>
+                  <p className="text-xs text-muted-foreground leading-relaxed mt-2">
+                    {t(`studies.categories.${category.key}.description`)}
+                  </p>
                 </div>
-              </DialogContent>
-            </Dialog>
+                <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+              </div>
+            </Link>
           );
         })}
       </section>
