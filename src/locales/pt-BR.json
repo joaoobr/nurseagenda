@@ -8,7 +8,8 @@
     "schedule": "Agenda",
     "patients": "Pacientes",
     "medications": "Medicações",
-    "more": "Mais"
+    "more": "Mais",
+    "studies": "Estudos"
   },
   "auth": {
     "login": "Entrar",
@@ -381,5 +382,54 @@
     "and": "e a",
     "privacy": "Política de Privacidade",
     "required": "Você deve aceitar os termos para continuar"
+  },
+  "studies": {
+    "badge": "Para estudantes e profissionais",
+    "title": "Estudos",
+    "subtitle": "Resumos rápidos, dicas práticas e fontes úteis para revisar enfermagem no dia a dia.",
+    "summaries": "Resumos de enfermagem",
+    "tips": "Dicas rápidas",
+    "sites": "Sites interessantes",
+    "communityTitle": "Comunidade de estudos",
+    "communityDesc": "Em breve: acesso a grupo para receber resumos, materiais e avisos de novos conteúdos.",
+    "communityCta": "Grupo em breve",
+    "categories": {
+      "vitals": {
+        "title": "Sinais vitais",
+        "description": "Parâmetros, alertas e raciocínio rápido."
+      },
+      "medications": {
+        "title": "Medicações",
+        "description": "Vias, checagens e segurança medicamentosa."
+      },
+      "safety": {
+        "title": "Segurança",
+        "description": "Prevenção de eventos e boas práticas."
+      },
+      "procedures": {
+        "title": "Procedimentos",
+        "description": "Passos essenciais antes, durante e depois."
+      }
+    },
+    "content": {
+      "vitals_1": "PA, FC, FR, temperatura, dor e SpO₂ devem ser avaliados em conjunto, não isoladamente.",
+      "vitals_2": "Alterações súbitas ou tendência de piora exigem reavaliação e comunicação rápida à equipe.",
+      "vitals_3": "Registre horário, contexto, conduta tomada e resposta do paciente.",
+      "medications_1": "Confira paciente, medicamento, dose, via, horário, diluição e registro antes da administração.",
+      "medications_2": "Alergias, interações e duplicidades precisam ser verificadas antes de medicar.",
+      "medications_3": "Em dúvidas de dose ou prescrição ilegível, pause e confirme com a equipe responsável.",
+      "safety_1": "Higienização das mãos é a principal barreira contra infecções relacionadas à assistência.",
+      "safety_2": "Identificação do paciente deve ocorrer antes de medicações, coletas e procedimentos.",
+      "safety_3": "Risco de queda, lesão por pressão e alergias devem estar visíveis no plano de cuidado.",
+      "procedures_1": "Antes do procedimento: explique, confirme identidade, reúna material e preserve privacidade.",
+      "procedures_2": "Durante: mantenha técnica adequada, observe sinais de desconforto e comunique intercorrências.",
+      "procedures_3": "Depois: descarte materiais, registre achados e monitore resposta clínica."
+    },
+    "quickTips": {
+      "tip_1": "Use mapas mentais para revisar anatomia, farmacologia e semiologia.",
+      "tip_2": "Treine cálculos de dose e gotejamento com exemplos curtos diariamente.",
+      "tip_3": "Transforme protocolos em checklists para memorizar etapas críticas.",
+      "tip_4": "Revise sinais de alerta por sistema: respiratório, cardiovascular, neurológico e metabólico."
+    }
   }
 }
