@@ -8,7 +8,8 @@
     "schedule": "Agenda",
     "patients": "Pacientes",
     "medications": "Medicaciones",
-    "more": "Más"
+    "more": "Más",
+    "studies": "Studies"
   },
   "auth": {
     "login": "Iniciar sesión",
@@ -356,5 +357,54 @@
     "and": "y la",
     "privacy": "Política de Privacidad",
     "required": "Debe aceptar los términos para continuar"
+  },
+  "studies": {
+    "badge": "For students and professionals",
+    "title": "Studies",
+    "subtitle": "Quick summaries, practical tips and useful sources to review nursing every day.",
+    "summaries": "Nursing summaries",
+    "tips": "Quick tips",
+    "sites": "Useful sites",
+    "communityTitle": "Study community",
+    "communityDesc": "Coming soon: access to a group for summaries, materials and new content alerts.",
+    "communityCta": "Group coming soon",
+    "categories": {
+      "vitals": {
+        "title": "Vital signs",
+        "description": "Parameters, alerts and quick reasoning."
+      },
+      "medications": {
+        "title": "Medications",
+        "description": "Routes, checks and medication safety."
+      },
+      "safety": {
+        "title": "Safety",
+        "description": "Event prevention and best practices."
+      },
+      "procedures": {
+        "title": "Procedures",
+        "description": "Essential steps before, during and after."
+      }
+    },
+    "content": {
+      "vitals_1": "BP, HR, RR, temperature, pain and SpO₂ should be assessed together, not in isolation.",
+      "vitals_2": "Sudden changes or worsening trends require reassessment and quick team communication.",
+      "vitals_3": "Record time, context, action taken and patient response.",
+      "medications_1": "Check patient, medication, dose, route, time, dilution and record before administration.",
+      "medications_2": "Allergies, interactions and duplicate therapies must be checked before medication.",
+      "medications_3": "If dose or prescription is unclear, pause and confirm with the responsible team.",
+      "safety_1": "Hand hygiene is the main barrier against healthcare-associated infections.",
+      "safety_2": "Patient identification must happen before medications, collections and procedures.",
+      "safety_3": "Fall risk, pressure injury risk and allergies should be visible in the care plan.",
+      "procedures_1": "Before: explain, confirm identity, gather supplies and preserve privacy.",
+      "procedures_2": "During: maintain proper technique, observe discomfort and report incidents.",
+      "procedures_3": "After: dispose supplies, document findings and monitor clinical response."
+    },
+    "quickTips": {
+      "tip_1": "Use mind maps to review anatomy, pharmacology and clinical assessment.",
+      "tip_2": "Practice dose and drip calculations with short daily examples.",
+      "tip_3": "Turn protocols into checklists to memorize critical steps.",
+      "tip_4": "Review warning signs by system: respiratory, cardiovascular, neurological and metabolic."
+    }
   }
 }
