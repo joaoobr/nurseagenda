@@ -430,6 +430,139 @@
       "tip_2": "Treine cálculos de dose e gotejamento com exemplos curtos diariamente.",
       "tip_3": "Transforme protocolos em checklists para memorizar etapas críticas.",
       "tip_4": "Revise sinais de alerta por sistema: respiratório, cardiovascular, neurológico e metabólico."
+    },
+    "dailyTips": {
+      "title": "Dica de estudo do dia",
+      "day": "Dia {{day}} de 365",
+      "items": [
+        "Revise um parâmetro normal de sinais vitais e um sinal de alerta antes do próximo plantão.",
+        "Ao estudar medicações, associe sempre classe, indicação, efeitos adversos e cuidados de enfermagem.",
+        "Treine explicar um procedimento em linguagem simples, como se estivesse orientando um paciente.",
+        "Monte pequenos checklists de segurança para transformar teoria em rotina prática.",
+        "Separe 10 minutos para revisar siglas comuns: PA, FC, FR, SpO₂, IM, IV, SC e VO.",
+        "Quando estudar um tema, pergunte: o que observo, o que registro e quando comunico?",
+        "Revise cálculo de gotejamento com um exemplo simples para manter agilidade.",
+        "Estude sinais de hipoglicemia e hiperglicemia comparando sintomas e condutas iniciais.",
+        "Faça flashcards de vias de administração e locais mais usados na prática.",
+        "Revise precauções padrão: mãos, EPIs, descarte e prevenção de exposição biológica.",
+        "Leia um protocolo curto e transforme os passos principais em três tópicos.",
+        "Pratique raciocínio clínico: dado alterado + possível causa + primeira ação segura."
+      ]
+    },
+    "categoryDetails": {
+      "vitals": {
+        "intro": "Base para avaliar estabilidade clínica e reconhecer deterioração precoce.",
+        "sections": [
+          {
+            "title": "O que observar",
+            "items": [
+              "Pressão arterial, frequência cardíaca, frequência respiratória, temperatura, dor e SpO₂.",
+              "Compare o valor atual com histórico, diagnóstico, medicações e queixa do paciente.",
+              "Observe sinais associados: sudorese, palidez, dispneia, confusão, sonolência ou dor intensa."
+            ]
+          },
+          {
+            "title": "Pontos de alerta",
+            "items": [
+              "Queda de SpO₂, alteração de consciência, hipotensão, taquicardia persistente ou febre alta merecem atenção imediata.",
+              "Tendência de piora pode ser mais importante que um valor isolado.",
+              "Reavalie após intervenção e registre a resposta clínica."
+            ]
+          },
+          {
+            "title": "Para memorizar",
+            "items": [
+              "Sempre registre horário, posição do paciente, dispositivo de O₂ e conduta tomada.",
+              "Sinais vitais são dados objetivos, mas precisam ser interpretados com o contexto clínico."
+            ]
+          }
+        ]
+      },
+      "medications": {
+        "intro": "Resumo de segurança para administração e revisão de medicações.",
+        "sections": [
+          {
+            "title": "Antes de administrar",
+            "items": [
+              "Confirme paciente, medicamento, dose, via, horário, diluição, validade e prescrição.",
+              "Verifique alergias, interações, duplicidades e parâmetros necessários antes da dose.",
+              "Em prescrição ilegível ou dose incomum, pare e confirme antes de medicar."
+            ]
+          },
+          {
+            "title": "Durante e depois",
+            "items": [
+              "Observe reações imediatas, dor, extravasamento, náuseas, tontura ou sinais alérgicos.",
+              "Registre administração, horário, via, local quando aplicável e intercorrências.",
+              "Medicações de alto risco exigem dupla checagem conforme protocolo institucional."
+            ]
+          },
+          {
+            "title": "Para estudar",
+            "items": [
+              "Revise classes comuns: analgésicos, antibióticos, anticoagulantes, insulinas e anti-hipertensivos.",
+              "Associe cada classe aos principais cuidados de enfermagem."
+            ]
+          }
+        ]
+      },
+      "safety": {
+        "intro": "Boas práticas para reduzir riscos e proteger paciente, estudante e equipe.",
+        "sections": [
+          {
+            "title": "Prioridades",
+            "items": [
+              "Identificação correta antes de qualquer cuidado, coleta, medicação ou procedimento.",
+              "Higienização das mãos nos momentos indicados e uso adequado de EPIs.",
+              "Ambiente seguro: campainha acessível, grades conforme risco, piso seco e leito travado."
+            ]
+          },
+          {
+            "title": "Riscos frequentes",
+            "items": [
+              "Quedas, lesão por pressão, alergias, infecção, erro de medicação e falha de comunicação.",
+              "Use passagem de plantão objetiva com situação, histórico, avaliação e recomendação.",
+              "Notifique intercorrências e quase erros para melhorar processos."
+            ]
+          },
+          {
+            "title": "Para memorizar",
+            "items": [
+              "Segurança começa antes da técnica: confirmar, preparar, comunicar e registrar.",
+              "Checklist simples reduz esquecimento em rotinas repetitivas."
+            ]
+          }
+        ]
+      },
+      "procedures": {
+        "intro": "Estrutura rápida para estudar e executar procedimentos com segurança.",
+        "sections": [
+          {
+            "title": "Antes",
+            "items": [
+              "Leia a prescrição ou indicação, confirme identidade, explique o procedimento e reúna materiais.",
+              "Avalie contraindicações, alergias, dor, privacidade e necessidade de ajuda.",
+              "Organize o ambiente para evitar interrupções e contaminação."
+            ]
+          },
+          {
+            "title": "Durante",
+            "items": [
+              "Mantenha técnica limpa ou estéril conforme procedimento.",
+              "Observe desconforto, sangramento, alteração de sinais vitais ou reação inesperada.",
+              "Comunique intercorrências e peça apoio quando houver risco."
+            ]
+          },
+          {
+            "title": "Depois",
+            "items": [
+              "Descarte materiais corretamente, higienize mãos e deixe o paciente seguro.",
+              "Registre procedimento, achados, materiais usados e resposta do paciente.",
+              "Monitore efeitos esperados e sinais de complicação."
+            ]
+          }
+        ]
+      }
     }
   }
 }
