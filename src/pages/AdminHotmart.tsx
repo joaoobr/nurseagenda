@@ -321,24 +321,24 @@ const AdminHotmart = () => {
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{editing ? 'Editar assinatura' : 'Nova assinatura'}</DialogTitle>
+            <DialogTitle>{editing ? t('adminHotmart.dialogTitleEdit') : t('adminHotmart.dialogTitleNew')}</DialogTitle>
             <DialogDescription>
-              O acesso é liberado pelo e-mail. Use o mesmo e-mail que o usuário usa para logar.
+              {t('adminHotmart.dialogDesc')}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-3">
             <div>
-              <Label>E-mail *</Label>
+              <Label>{t('adminHotmart.fieldEmail')} *</Label>
               <Input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="cliente@email.com"
+                placeholder={t('adminHotmart.emailPlaceholder')}
               />
             </div>
             <div>
-              <Label>Status</Label>
+              <Label>{t('adminHotmart.fieldStatus')}</Label>
               <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v as HotmartStatus })}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
@@ -348,14 +348,14 @@ const AdminHotmart = () => {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label>Produto</Label>
+                <Label>{t('adminHotmart.fieldProduct')}</Label>
                 <Input
                   value={form.product_name}
                   onChange={(e) => setForm({ ...form, product_name: e.target.value })}
                 />
               </div>
               <div>
-                <Label>ID produto</Label>
+                <Label>{t('adminHotmart.fieldProductId')}</Label>
                 <Input
                   value={form.product_id}
                   onChange={(e) => setForm({ ...form, product_id: e.target.value })}
@@ -364,14 +364,14 @@ const AdminHotmart = () => {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label>Transação</Label>
+                <Label>{t('adminHotmart.fieldTransaction')}</Label>
                 <Input
                   value={form.transaction_id}
                   onChange={(e) => setForm({ ...form, transaction_id: e.target.value })}
                 />
               </div>
               <div>
-                <Label>Cód. assinante</Label>
+                <Label>{t('adminHotmart.fieldSubscriber')}</Label>
                 <Input
                   value={form.subscriber_code}
                   onChange={(e) => setForm({ ...form, subscriber_code: e.target.value })}
@@ -379,7 +379,7 @@ const AdminHotmart = () => {
               </div>
             </div>
             <div>
-              <Label>Data da compra</Label>
+              <Label>{t('adminHotmart.fieldPurchaseDate')}</Label>
               <Input
                 type="datetime-local"
                 value={form.purchase_date}
@@ -387,7 +387,7 @@ const AdminHotmart = () => {
               />
             </div>
             <div>
-              <Label>Próxima cobrança</Label>
+              <Label>{t('adminHotmart.fieldNextCharge')}</Label>
               <Input
                 type="datetime-local"
                 value={form.next_charge_date}
@@ -395,24 +395,24 @@ const AdminHotmart = () => {
               />
             </div>
             <div>
-              <Label>Expira em</Label>
+              <Label>{t('adminHotmart.fieldExpiresAt')}</Label>
               <Input
                 type="datetime-local"
                 value={form.expires_at}
                 onChange={(e) => setForm({ ...form, expires_at: e.target.value })}
               />
               <p className="text-[10px] text-muted-foreground mt-1">
-                Deixe vazio para acesso sem expiração (enquanto status = active).
+                {t('adminHotmart.expiresHint')}
               </p>
             </div>
           </div>
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={saving}>
-              Cancelar
+              {t('adminHotmart.cancel')}
             </Button>
             <Button onClick={save} disabled={saving}>
-              {saving ? 'Salvando...' : editing ? 'Salvar' : 'Criar'}
+              {saving ? t('adminHotmart.saving') : editing ? t('adminHotmart.save') : t('adminHotmart.create')}
             </Button>
           </DialogFooter>
         </DialogContent>
