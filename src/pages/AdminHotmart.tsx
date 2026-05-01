@@ -207,9 +207,9 @@ const AdminHotmart = () => {
         <div className="flex-1">
           <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <ShoppingBag className="h-6 w-6 text-primary" />
-            Assinaturas Hotmart
+            {t('adminHotmart.title')}
           </h1>
-          <p className="text-sm text-muted-foreground">Gerencie manualmente o acesso por e-mail</p>
+          <p className="text-sm text-muted-foreground">{t('adminHotmart.subtitle')}</p>
         </div>
         <Button variant="outline" size="icon" onClick={fetchRows} disabled={loading}>
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
@@ -221,7 +221,7 @@ const AdminHotmart = () => {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Buscar por email, transação, produto..."
+            placeholder={t('adminHotmart.searchPlaceholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -232,14 +232,14 @@ const AdminHotmart = () => {
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">Todos os status</SelectItem>
+            <SelectItem value="all">{t('adminHotmart.allStatuses')}</SelectItem>
             {STATUSES.map((s) => (
               <SelectItem key={s} value={s}>{s}</SelectItem>
             ))}
           </SelectContent>
         </Select>
         <Button onClick={openCreate} className="gap-2">
-          <Plus className="h-4 w-4" />Nova
+          <Plus className="h-4 w-4" />{t('adminHotmart.new')}
         </Button>
       </div>
 
@@ -251,7 +251,7 @@ const AdminHotmart = () => {
       ) : filtered.length === 0 ? (
         <Card>
           <CardContent className="p-8 text-center text-sm text-muted-foreground">
-            Nenhuma assinatura encontrada.
+            {t('adminHotmart.noResults')}
           </CardContent>
         </Card>
       ) : (
@@ -270,9 +270,9 @@ const AdminHotmart = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-muted-foreground mb-3">
-                  <div><span className="font-medium text-foreground">Compra:</span> {fmt(r.purchase_date)}</div>
-                  <div><span className="font-medium text-foreground">Próx. cobrança:</span> {fmt(r.next_charge_date)}</div>
-                  <div><span className="font-medium text-foreground">Expira:</span> {fmt(r.expires_at)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.purchase')}:</span> {fmt(r.purchase_date)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.nextCharge')}:</span> {fmt(r.next_charge_date)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.expires')}:</span> {fmt(r.expires_at)}</div>
                 </div>
 
                 {(r.transaction_id || r.subscriber_code) && (
@@ -284,7 +284,7 @@ const AdminHotmart = () => {
 
                 <div className="flex items-center gap-2">
                   <Button variant="outline" size="sm" className="h-8 gap-1" onClick={() => openEdit(r)}>
-                    <Pencil className="h-3 w-3" />Editar
+                    <Pencil className="h-3 w-3" />{t('adminHotmart.edit')}
                   </Button>
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
@@ -294,18 +294,18 @@ const AdminHotmart = () => {
                     </AlertDialogTrigger>
                     <AlertDialogContent>
                       <AlertDialogHeader>
-                        <AlertDialogTitle>Remover assinatura?</AlertDialogTitle>
+                        <AlertDialogTitle>{t('adminHotmart.removeTitle')}</AlertDialogTitle>
                         <AlertDialogDescription>
-                          Esta ação remove o acesso de {r.email}. Não pode ser desfeita.
+                          {t('adminHotmart.removeDesc', { email: r.email })}
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
-                        <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                        <AlertDialogCancel>{t('adminHotmart.cancel')}</AlertDialogCancel>
                         <AlertDialogAction
                           onClick={() => remove(r.id)}
                           className="bg-destructive text-destructive-foreground"
                         >
-                          Remover
+                          {t('adminHotmart.remove')}
                         </AlertDialogAction>
                       </AlertDialogFooter>
                     </AlertDialogContent>
