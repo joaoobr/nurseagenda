@@ -33,7 +33,9 @@
     "verifyEmail": "Verifique seu e-mail",
     "verifyEmailMessage": "Enviamos um link de confirmação para o seu e-mail. Clique no link para ativar sua conta.",
     "backToLogin": "Voltar para o login",
-    "emailNotConfirmed": "E-mail não confirmado. Verifique sua caixa de entrada."
+    "emailNotConfirmed": "E-mail não confirmado. Verifique sua caixa de entrada.",
+    "hotmartTitle": "Já comprou na Hotmart?",
+    "hotmartHint": "Use o mesmo e-mail da compra para acessar seu plano automaticamente."
   },
   "schedule": {
     "title": "Agenda de Plantões",
@@ -362,7 +364,9 @@
       "vitalSigns": "Sinais vitais e gráficos",
       "calculator": "Calculadora de dosagem",
       "priority": "Suporte prioritário"
-    }
+    },
+    "hotmartWarningTitle": "⚠️ Importante: use o mesmo e-mail",
+    "hotmartWarningBody": "Finalize a compra na Hotmart com o e-mail {{email}}. O acesso é liberado automaticamente após a aprovação do pagamento."
   },
   "paywall": {
     "title": "Seu período de teste expirou",

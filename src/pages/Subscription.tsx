@@ -116,14 +116,14 @@ const Subscription = () => {
                 {t('subscription.subscribe')}
               </Button>
 
-              <div className="mt-4 p-3 rounded-lg bg-muted/50 border border-border flex gap-2 items-start">
-                <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-muted-foreground">
-                  {t('subscription.hotmartHint', {
-                    email: user?.email ?? '',
-                    defaultValue: 'Use this same email ({{email}}) at Hotmart checkout. Your access is released automatically once payment is approved.',
-                  })}
-                </p>
+              <div className="mt-4 p-3 rounded-lg bg-primary/5 border-2 border-primary/30 flex gap-2 items-start">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                <div className="text-xs text-foreground leading-relaxed">
+                  <p className="font-semibold mb-1">{t('subscription.hotmartWarningTitle')}</p>
+                  <p className="text-muted-foreground">
+                    {t('subscription.hotmartWarningBody', { email: user?.email ?? '' })}
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>

@@ -33,7 +33,9 @@
     "verifyEmail": "Vérifiez votre e-mail",
     "verifyEmailMessage": "Nous avons envoyé un lien de confirmation à votre e-mail. Cliquez sur le lien pour activer votre compte.",
     "backToLogin": "Retour à la connexion",
-    "emailNotConfirmed": "E-mail non confirmé. Veuillez vérifier votre boîte de réception."
+    "emailNotConfirmed": "E-mail non confirmé. Veuillez vérifier votre boîte de réception.",
+    "hotmartTitle": "Déjà acheté sur Hotmart ?",
+    "hotmartHint": "Utilisez le même e-mail que celui de l'achat pour accéder automatiquement à votre plan."
   },
   "schedule": {
     "title": "Planning des Gardes",
@@ -337,7 +339,9 @@
       "vitalSigns": "Signes vitaux et graphiques",
       "calculator": "Calculateur de dosage",
       "priority": "Support prioritaire"
-    }
+    },
+    "hotmartWarningTitle": "⚠️ Important : utilisez le même e-mail",
+    "hotmartWarningBody": "Finalisez l'achat sur Hotmart avec l'e-mail {{email}}. L'accès est activé automatiquement dès l'approbation du paiement."
   },
   "paywall": {
     "title": "Votre période d'essai a expiré",

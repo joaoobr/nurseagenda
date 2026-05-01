@@ -167,8 +167,8 @@ const Auth = () => {
         <div className="w-full max-w-sm mb-4 p-3 rounded-lg border-2 border-primary/30 bg-primary/5 flex gap-2 items-start">
           <ShoppingBag className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
           <p className="text-xs text-foreground leading-relaxed">
-            <span className="font-semibold">Já comprou na Hotmart?</span>{' '}
-            Use o <span className="font-semibold text-primary">mesmo e-mail da compra</span> para acessar seu plano automaticamente.
+            <span className="font-semibold">{t('auth.hotmartTitle')}</span>{' '}
+            {t('auth.hotmartHint')}
           </p>
         </div>
 
