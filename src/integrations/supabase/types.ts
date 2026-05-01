@@ -79,6 +79,57 @@ export type Database = {
         }
         Relationships: []
       }
+      hotmart_subscriptions: {
+        Row: {
+          created_at: string
+          email: string
+          expires_at: string | null
+          id: string
+          last_event: string | null
+          next_charge_date: string | null
+          product_id: string | null
+          product_name: string | null
+          purchase_date: string | null
+          raw_event: Json | null
+          status: Database["public"]["Enums"]["hotmart_status"]
+          subscriber_code: string | null
+          transaction_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          expires_at?: string | null
+          id?: string
+          last_event?: string | null
+          next_charge_date?: string | null
+          product_id?: string | null
+          product_name?: string | null
+          purchase_date?: string | null
+          raw_event?: Json | null
+          status?: Database["public"]["Enums"]["hotmart_status"]
+          subscriber_code?: string | null
+          transaction_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          expires_at?: string | null
+          id?: string
+          last_event?: string | null
+          next_charge_date?: string | null
+          product_id?: string | null
+          product_name?: string | null
+          purchase_date?: string | null
+          raw_event?: Json | null
+          status?: Database["public"]["Enums"]["hotmart_status"]
+          subscriber_code?: string | null
+          transaction_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       medications: {
         Row: {
           created_at: string
@@ -539,6 +590,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_hotmart_access: {
+        Args: { _email: string }
+        Returns: {
+          expires_at: string
+          has_access: boolean
+          product_name: string
+          status: Database["public"]["Enums"]["hotmart_status"]
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -549,6 +609,12 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
+      hotmart_status:
+        | "active"
+        | "canceled"
+        | "refunded"
+        | "expired"
+        | "chargeback"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -677,6 +743,13 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "moderator", "user"],
+      hotmart_status: [
+        "active",
+        "canceled",
+        "refunded",
+        "expired",
+        "chargeback",
+      ],
     },
   },
 } as const
