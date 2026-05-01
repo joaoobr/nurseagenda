@@ -2,3 +2,6 @@ project_id = "igylprpvqunjpfsagnkr"
 
 [functions.hotmart-webhook]
 verify_jwt = false
+
+[functions.get-hotmart-link]
+verify_jwt = false

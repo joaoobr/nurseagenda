@@ -4,13 +4,19 @@ import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Crown, ExternalLink, RefreshCw, Loader2, Mail } from 'lucide-react';
-
-const HOTMART_PRODUCT_URL = (import.meta.env.VITE_HOTMART_PRODUCT_URL as string | undefined) || '';
+import { supabase } from '@/integrations/supabase/client';
 
 const Subscription = () => {
   const { t } = useTranslation();
   const { subscription, subscriptionLoading, checkSubscription, user } = useAuth();
   const [polling, setPolling] = useState(false);
+  const [hotmartUrl, setHotmartUrl] = useState<string>('');
+
+  useEffect(() => {
+    supabase.functions.invoke('get-hotmart-link').then(({ data }) => {
+      if (data?.url) setHotmartUrl(data.url);
+    }).catch(() => {});
+  }, []);
 
   // Auto-poll for activation after the user returns from Hotmart checkout
   useEffect(() => {
