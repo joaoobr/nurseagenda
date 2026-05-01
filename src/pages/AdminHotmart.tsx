@@ -21,7 +21,7 @@ import { toast } from 'sonner';
 import { ArrowLeft, Plus, Pencil, Trash2, Search, RefreshCw, ShoppingBag } from 'lucide-react';
 import { format } from 'date-fns';
 
-type HotmartStatus = 'active' | 'canceled' | 'refunded' | 'expired' | 'pending';
+type HotmartStatus = 'active' | 'canceled' | 'refunded' | 'expired' | 'chargeback';
 
 interface HotmartSubscription {
   id: string;
