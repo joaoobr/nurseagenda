@@ -47,9 +47,9 @@ const Subscription = () => {
   ];
 
   const handleBuy = () => {
-    if (!HOTMART_PRODUCT_URL) return;
+    if (!hotmartUrl) return;
     // Pre-fill buyer email when possible (Hotmart honors ?email=)
-    const url = new URL(HOTMART_PRODUCT_URL);
+    const url = new URL(hotmartUrl);
     if (user?.email) url.searchParams.set('email', user.email);
     window.open(url.toString(), '_blank', 'noopener,noreferrer');
   };
@@ -110,7 +110,7 @@ const Subscription = () => {
                 className="w-full gap-2"
                 size="lg"
                 onClick={handleBuy}
-                disabled={!HOTMART_PRODUCT_URL}
+                disabled={!hotmartUrl}
               >
                 <ExternalLink className="h-4 w-4" />
                 {t('subscription.subscribe')}
