@@ -35,7 +35,9 @@
     "backToLogin": "Voltar ao login",
     "emailNotConfirmed": "E-mail não confirmado. Verifique a sua caixa de entrada.",
     "hotmartTitle": "Já comprou na Hotmart?",
-    "hotmartHint": "Utilize o mesmo e-mail da compra para aceder ao seu plano automaticamente."
+    "hotmartHint": "Utilize o mesmo e-mail da compra para aceder ao seu plano automaticamente.",
+    "specialtyPlaceholder": "Ex: UCI, Urgência, Pediatria",
+    "comingSoon": "Funcionalidade em breve!"
   },
   "schedule": {
     "title": "Agenda de Turnos",
@@ -363,80 +365,80 @@
     "required": "Deve aceitar os termos para continuar"
   },
   "studies": {
-    "badge": "For students and professionals",
-    "title": "Studies",
-    "subtitle": "Quick summaries, practical tips and useful sources to review nursing every day.",
-    "summaries": "Nursing summaries",
-    "tips": "Quick tips",
-    "sites": "Useful sites",
-    "communityTitle": "Study community",
-    "communityDesc": "Coming soon: access to a group for summaries, materials and new content alerts.",
-    "communityCta": "Group coming soon",
+    "badge": "Para estudantes e profissionais",
+    "title": "Estudos",
+    "subtitle": "Resumos rápidos, dicas práticas e recursos úteis para rever Enfermagem no dia a dia.",
+    "summaries": "Resumos de Enfermagem",
+    "tips": "Dicas rápidas",
+    "sites": "Sites interessantes",
+    "communityTitle": "Comunidade de estudos",
+    "communityDesc": "Brevemente: acesso a grupo para receber resumos, materiais e avisos de novos conteúdos.",
+    "communityCta": "Grupo em breve",
     "categories": {
       "vitals": {
-        "title": "Vital signs",
-        "description": "Parameters, alerts and quick reasoning."
+        "title": "Sinais vitais",
+        "description": "Parâmetros, alertas e raciocínio rápido."
       },
       "medications": {
-        "title": "Medications",
-        "description": "Routes, checks and medication safety."
+        "title": "Medicação",
+        "description": "Vias, ênfases e segurança medicamentosa."
       },
       "safety": {
-        "title": "Safety",
-        "description": "Event prevention and best practices."
+        "title": "Segurança",
+        "description": "Prevenção de eventos e boas práticas."
       },
       "procedures": {
-        "title": "Procedures",
-        "description": "Essential steps before, during and after."
+        "title": "Procedimentos",
+        "description": "Passos essenciais antes, durante e depois."
       }
     },
     "content": {
-      "vitals_1": "BP, HR, RR, temperature, pain and SpO₂ should be assessed together, not in isolation.",
-      "vitals_2": "Sudden changes or worsening trends require reassessment and quick team communication.",
-      "vitals_3": "Record time, context, action taken and patient response.",
-      "medications_1": "Check patient, medication, dose, route, time, dilution and record before administration.",
-      "medications_2": "Allergies, interactions and duplicate therapies must be checked before medication.",
-      "medications_3": "If dose or prescription is unclear, pause and confirm with the responsible team.",
-      "safety_1": "Hand hygiene is the main barrier against healthcare-associated infections.",
-      "safety_2": "Patient identification must happen before medications, collections and procedures.",
-      "safety_3": "Fall risk, pressure injury risk and allergies should be visible in the care plan.",
-      "procedures_1": "Before: explain, confirm identity, gather supplies and preserve privacy.",
-      "procedures_2": "During: maintain proper technique, observe discomfort and report incidents.",
-      "procedures_3": "After: dispose supplies, document findings and monitor clinical response."
+      "vitals_1": "PA, FC, FR, temperatura, dor e SpO₂ devem ser avaliados em conjunto, não isoladamente.",
+      "vitals_2": "Alterações súbitas ou tendência de agravamento exigem reavaliação e comunicação rápida à equipa.",
+      "vitals_3": "Registe a hora, o contexto, a conduta adotada e a resposta do doente.",
+      "medications_1": "Confirme doente, medicamento, dose, via, hora, diluição e registo antes da administração.",
+      "medications_2": "Alergias, interações e duplicações precisam de ser verificadas antes de medicar.",
+      "medications_3": "Em caso de dúvidas sobre a dose ou prescrição ilegível, faça uma pausa e confirme com a equipa responsável.",
+      "safety_1": "A higienização das mãos é a principal barreira contra infeções relacionadas com os cuidados de saúde.",
+      "safety_2": "A identificação do doente deve ocorrer antes de medicação, colheitas e procedimentos.",
+      "safety_3": "O risco de queda, lesão por pressão e alergias devem estar visíveis no plano de cuidados.",
+      "procedures_1": "Antes do procedimento: explique, confirme a identidade, junte material e preserve a privacidade.",
+      "procedures_2": "Durante: mantenha a técnica adequada, observe sinais de desconforto e comunique intercorrências.",
+      "procedures_3": "Depois: descarte materiais, registe achados e monitorize a resposta clínica."
     },
     "quickTips": {
-      "tip_1": "Use mind maps to review anatomy, pharmacology and clinical assessment.",
-      "tip_2": "Practice dose and drip calculations with short daily examples.",
-      "tip_3": "Turn protocols into checklists to memorize critical steps.",
-      "tip_4": "Review warning signs by system: respiratory, cardiovascular, neurological and metabolic."
+      "tip_1": "Use mapas mentais para rever anatomia, farmacologia e semiologia.",
+      "tip_2": "Treine cálculos de dose e gotejamento com exemplos curtos diariamente.",
+      "tip_3": "Transforme protocolos em listas de verificação para memorizar etapas críticas.",
+      "tip_4": "Reveja sinais de alerta por sistema: respiratório, cardiovascular, neurológico e metabólico."
     },
     "dailyTips": {
       "title": "Dica de estudo do dia",
       "day": "Dia {{day}} de 365",
       "items": [
-        "Revise um parâmetro normal de sinais vitais e um sinal de alerta antes do próximo plantão.",
-        "Ao estudar medicações, associe sempre classe, indicação, efeitos adversos e cuidados de enfermagem.",
-        "Treine explicar um procedimento em linguagem simples, como se estivesse orientando um paciente.",
-        "Monte pequenos checklists de segurança para transformar teoria em rotina prática.",
-        "Separe 10 minutos para revisar siglas comuns: PA, FC, FR, SpO₂, IM, IV, SC e VO.",
-        "Quando estudar um tema, pergunte: o que observo, o que registro e quando comunico?",
-        "Revise cálculo de gotejamento com um exemplo simples para manter agilidade.",
+        "Reveja um parâmetro normal de sinais vitais e um sinal de alerta antes do próximo turno.",
+        "Ao estudar medicação, associe sempre a classe, indicação, efeitos adversos e cuidados de enfermagem.",
+        "Treine explicar um procedimento em linguagem simples, como se estivesse a orientar um doente.",
+        "Monte pequenas listas de verificação de segurança para transformar a teoria em rotina prática.",
+        "Separe 10 minutos para rever siglas comuns: PA, FC, FR, SpO₂, IM, IV, SC e VO.",
+        "Quando estudar um tema, pergunte: o que observo, o que registo e quando comunico?",
+        "Reveja o cálculo de gotejamento com um exemplo simples para manter a agilidade.",
         "Estude sinais de hipoglicemia e hiperglicemia comparando sintomas e condutas iniciais.",
         "Faça flashcards de vias de administração e locais mais usados na prática.",
-        "Revise precauções padrão: mãos, EPIs, descarte e prevenção de exposição biológica.",
+        "Reveja as precauções padrão: mãos, EPIs, descarte e prevenção de exposição biológica.",
         "Leia um protocolo curto e transforme os passos principais em três tópicos.",
-        "Pratique raciocínio clínico: dado alterado + possível causa + primeira ação segura."
+        "Pratique o raciocínio clínico: dado alterado + possível causa + primeira ação segura."
       ]
     },
     "categoryDetails": {
       "vitals": {
-        "intro": "Base para avaliar estabilidade clínica e reconhecer deterioração precoce.",
+        "intro": "Base para avaliar a estabilidade clínica e reconhecer a deterioração precoce.",
         "sections": [
           {
             "title": "O que observar",
             "items": [
               "Pressão arterial, frequência cardíaca, frequência respiratória, temperatura, dor e SpO₂.",
-              "Compare o valor atual com histórico, diagnóstico, medicações e queixa do paciente.",
+              "Compare o valor atual com o histórico, diagnóstico, medicação e queixa do doente.",
               "Observe sinais associados: sudorese, palidez, dispneia, confusão, sonolência ou dor intensa."
             ]
           },
@@ -444,71 +446,71 @@
             "title": "Pontos de alerta",
             "items": [
               "Queda de SpO₂, alteração de consciência, hipotensão, taquicardia persistente ou febre alta merecem atenção imediata.",
-              "Tendência de piora pode ser mais importante que um valor isolado.",
-              "Reavalie após intervenção e registre a resposta clínica."
+              "A tendência de agravamento pode ser mais importante do que um valor isolado.",
+              "Reavalie após intervenção e registe a resposta clínica."
             ]
           },
           {
             "title": "Para memorizar",
             "items": [
-              "Sempre registre horário, posição do paciente, dispositivo de O₂ e conduta tomada.",
-              "Sinais vitais são dados objetivos, mas precisam ser interpretados com o contexto clínico."
+              "Registe sempre a hora, a posição do doente, o dispositivo de O₂ e a conduta adotada.",
+              "Os sinais vitais são dados objetivos, mas precisam ser interpretados com o contexto clínico."
             ]
           }
         ]
       },
       "medications": {
-        "intro": "Resumo de segurança para administração e revisão de medicações.",
+        "intro": "Resumo de segurança para administração e revisão de medicação.",
         "sections": [
           {
             "title": "Antes de administrar",
             "items": [
-              "Confirme paciente, medicamento, dose, via, horário, diluição, validade e prescrição.",
-              "Verifique alergias, interações, duplicidades e parâmetros necessários antes da dose.",
-              "Em prescrição ilegível ou dose incomum, pare e confirme antes de medicar."
+              "Confirme o doente, medicamento, dose, via, hora, diluição, validade e prescrição.",
+              "Verifique alergias, interações, duplicações e parâmetros necessários antes da dose.",
+              "Em caso de prescrição ilegível ou dose incomum, pare e confirme antes de medicar."
             ]
           },
           {
             "title": "Durante e depois",
             "items": [
-              "Observe reações imediatas, dor, extravasamento, náuseas, tontura ou sinais alérgicos.",
-              "Registre administração, horário, via, local quando aplicável e intercorrências.",
-              "Medicações de alto risco exigem dupla checagem conforme protocolo institucional."
+              "Observe reações imediatas, dor, extravasamento, náuseas, tonturas ou sinais alérgicos.",
+              "Registe a administração, hora, via, local quando aplicável e intercorrências.",
+              "Medicações de alto risco exigem dupla verificação conforme protocolo institucional."
             ]
           },
           {
             "title": "Para estudar",
             "items": [
-              "Revise classes comuns: analgésicos, antibióticos, anticoagulantes, insulinas e anti-hipertensivos.",
+              "Reveja classes comuns: analgésicos, antibióticos, anticoagulantes, insulinas e anti-hipertensores.",
               "Associe cada classe aos principais cuidados de enfermagem."
             ]
           }
         ]
       },
       "safety": {
-        "intro": "Boas práticas para reduzir riscos e proteger paciente, estudante e equipe.",
+        "intro": "Boas práticas para reduzir riscos e proteger o doente, estudante e equipa.",
         "sections": [
           {
             "title": "Prioridades",
             "items": [
-              "Identificação correta antes de qualquer cuidado, coleta, medicação ou procedimento.",
+              "Identificação correta antes de qualquer cuidado, colheita, medicação ou procedimento.",
               "Higienização das mãos nos momentos indicados e uso adequado de EPIs.",
-              "Ambiente seguro: campainha acessível, grades conforme risco, piso seco e leito travado."
+              "Ambiente seguro: campainha acessível, grades conforme risco, pavimento seco e cama travada."
             ]
           },
           {
             "title": "Riscos frequentes",
             "items": [
-              "Quedas, lesão por pressão, alergias, infecção, erro de medicação e falha de comunicação.",
-              "Use passagem de plantão objetiva com situação, histórico, avaliação e recomendação.",
-              "Notifique intercorrências e quase erros para melhorar processos."
+              "Quedas, lesão por pressão, alergias, infeção, erro de medicação e falha de comunicação.",
+              "Use passagem de turno objetiva com situação, histórico, avaliação e recomendação.",
+              "Notifique intercorrências e quase-erros para melhorar processos."
             ]
           },
           {
             "title": "Para memorizar",
             "items": [
-              "Segurança começa antes da técnica: confirmar, preparar, comunicar e registrar.",
-              "Checklist simples reduz esquecimento em rotinas repetitivas."
+              "A segurança começa antes da técnica: confirmar, preparar, comunicar e registar.",
+              "A lista de verificação simples reduz o esquecimento em rotinas repetitivas."
             ]
           }
         ]
@@ -519,7 +521,7 @@
           {
             "title": "Antes",
             "items": [
-              "Leia a prescrição ou indicação, confirme identidade, explique o procedimento e reúna materiais.",
+              "Leia a prescrição ou indicação, confirme a identidade, explique o procedimento e junte os materiais.",
               "Avalie contraindicações, alergias, dor, privacidade e necessidade de ajuda.",
               "Organize o ambiente para evitar interrupções e contaminação."
             ]
@@ -527,21 +529,58 @@
           {
             "title": "Durante",
             "items": [
-              "Mantenha técnica limpa ou estéril conforme procedimento.",
-              "Observe desconforto, sangramento, alteração de sinais vitais ou reação inesperada.",
+              "Mantenha a técnica asséptica ou esterilizada conforme o procedimento.",
+              "Observe desconforto, hemorragia, alteração de sinais vitais ou reação inesperada.",
               "Comunique intercorrências e peça apoio quando houver risco."
             ]
           },
           {
             "title": "Depois",
             "items": [
-              "Descarte materiais corretamente, higienize mãos e deixe o paciente seguro.",
-              "Registre procedimento, achados, materiais usados e resposta do paciente.",
-              "Monitore efeitos esperados e sinais de complicação."
+              "Descarte os materiais corretamente, higienize as mãos e deixe o doente em segurança.",
+              "Registe o procedimento, os achados, os materiais usados e a resposta do doente.",
+              "Monitorize os efeitos esperados e os sinais de complicação."
             ]
           }
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Subscrições Hotmart",
+    "subtitle": "Faça a gestão manual do acesso por e-mail",
+    "searchPlaceholder": "Procurar por email, transação, produto...",
+    "allStatuses": "Todos os estados",
+    "new": "Nova",
+    "noResults": "Nenhuma subscrição encontrada.",
+    "purchase": "Compra",
+    "nextCharge": "Próx. cobrança",
+    "expires": "Expira",
+    "edit": "Editar",
+    "removeTitle": "Remover subscrição?",
+    "removeDesc": "Esta ação remove o acesso de {{email}}. Não pode ser revertida.",
+    "remove": "Remover",
+    "cancel": "Cancelar",
+    "dialogTitleEdit": "Editar subscrição",
+    "dialogTitleNew": "Nova subscrição",
+    "dialogDesc": "O acesso é libertado pelo e-mail. Utilize o mesmo e-mail com que o utilizador faz login.",
+    "fieldEmail": "E-mail",
+    "emailPlaceholder": "cliente@email.com",
+    "fieldStatus": "Estado",
+    "fieldProduct": "Produto",
+    "fieldProductId": "ID produto",
+    "fieldTransaction": "Transação",
+    "fieldSubscriber": "Cód. subscritor",
+    "fieldPurchaseDate": "Data da compra",
+    "fieldNextCharge": "Próxima cobrança",
+    "fieldExpiresAt": "Expira em",
+    "expiresHint": "Deixe vazio para acesso sem expiração (enquanto estado = active).",
+    "save": "Guardar",
+    "create": "Criar",
+    "saving": "A guardar...",
+    "emailRequired": "E-mail é obrigatório",
+    "updated": "Subscrição atualizada",
+    "created": "Subscrição criada",
+    "removed": "Subscrição removida"
   }
 }

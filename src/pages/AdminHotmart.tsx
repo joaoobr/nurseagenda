@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAdminCheck } from '@/hooks/useAdminCheck';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -63,6 +64,7 @@ const emptyForm = {
 };
 
 const AdminHotmart = () => {
+  const { t } = useTranslation();
   const { isAdmin, loading: adminLoading } = useAdminCheck();
   const navigate = useNavigate();
   const [rows, setRows] = useState<HotmartSubscription[]>([]);
@@ -113,7 +115,7 @@ const AdminHotmart = () => {
 
   const save = async () => {
     if (!form.email.trim()) {
-      toast.error('E-mail é obrigatório');
+      toast.error(t('adminHotmart.emailRequired'));
       return;
     }
     setSaving(true);
@@ -145,7 +147,7 @@ const AdminHotmart = () => {
       toast.error(error.message);
       return;
     }
-    toast.success(editing ? 'Assinatura atualizada' : 'Assinatura criada');
+    toast.success(editing ? t('adminHotmart.updated') : t('adminHotmart.created'));
     setDialogOpen(false);
     fetchRows();
   };
@@ -156,7 +158,7 @@ const AdminHotmart = () => {
       toast.error(error.message);
       return;
     }
-    toast.success('Assinatura removida');
+    toast.success(t('adminHotmart.removed'));
     fetchRows();
   };
 
@@ -205,9 +207,9 @@ const AdminHotmart = () => {
         <div className="flex-1">
           <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <ShoppingBag className="h-6 w-6 text-primary" />
-            Assinaturas Hotmart
+            {t('adminHotmart.title')}
           </h1>
-          <p className="text-sm text-muted-foreground">Gerencie manualmente o acesso por e-mail</p>
+          <p className="text-sm text-muted-foreground">{t('adminHotmart.subtitle')}</p>
         </div>
         <Button variant="outline" size="icon" onClick={fetchRows} disabled={loading}>
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
@@ -219,7 +221,7 @@ const AdminHotmart = () => {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Buscar por email, transação, produto..."
+            placeholder={t('adminHotmart.searchPlaceholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -230,14 +232,14 @@ const AdminHotmart = () => {
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">Todos os status</SelectItem>
+            <SelectItem value="all">{t('adminHotmart.allStatuses')}</SelectItem>
             {STATUSES.map((s) => (
               <SelectItem key={s} value={s}>{s}</SelectItem>
             ))}
           </SelectContent>
         </Select>
         <Button onClick={openCreate} className="gap-2">
-          <Plus className="h-4 w-4" />Nova
+          <Plus className="h-4 w-4" />{t('adminHotmart.new')}
         </Button>
       </div>
 
@@ -249,7 +251,7 @@ const AdminHotmart = () => {
       ) : filtered.length === 0 ? (
         <Card>
           <CardContent className="p-8 text-center text-sm text-muted-foreground">
-            Nenhuma assinatura encontrada.
+            {t('adminHotmart.noResults')}
           </CardContent>
         </Card>
       ) : (
@@ -268,9 +270,9 @@ const AdminHotmart = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-muted-foreground mb-3">
-                  <div><span className="font-medium text-foreground">Compra:</span> {fmt(r.purchase_date)}</div>
-                  <div><span className="font-medium text-foreground">Próx. cobrança:</span> {fmt(r.next_charge_date)}</div>
-                  <div><span className="font-medium text-foreground">Expira:</span> {fmt(r.expires_at)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.purchase')}:</span> {fmt(r.purchase_date)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.nextCharge')}:</span> {fmt(r.next_charge_date)}</div>
+                  <div><span className="font-medium text-foreground">{t('adminHotmart.expires')}:</span> {fmt(r.expires_at)}</div>
                 </div>
 
                 {(r.transaction_id || r.subscriber_code) && (
@@ -282,7 +284,7 @@ const AdminHotmart = () => {
 
                 <div className="flex items-center gap-2">
                   <Button variant="outline" size="sm" className="h-8 gap-1" onClick={() => openEdit(r)}>
-                    <Pencil className="h-3 w-3" />Editar
+                    <Pencil className="h-3 w-3" />{t('adminHotmart.edit')}
                   </Button>
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
@@ -292,18 +294,18 @@ const AdminHotmart = () => {
                     </AlertDialogTrigger>
                     <AlertDialogContent>
                       <AlertDialogHeader>
-                        <AlertDialogTitle>Remover assinatura?</AlertDialogTitle>
+                        <AlertDialogTitle>{t('adminHotmart.removeTitle')}</AlertDialogTitle>
                         <AlertDialogDescription>
-                          Esta ação remove o acesso de {r.email}. Não pode ser desfeita.
+                          {t('adminHotmart.removeDesc', { email: r.email })}
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
-                        <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                        <AlertDialogCancel>{t('adminHotmart.cancel')}</AlertDialogCancel>
                         <AlertDialogAction
                           onClick={() => remove(r.id)}
                           className="bg-destructive text-destructive-foreground"
                         >
-                          Remover
+                          {t('adminHotmart.remove')}
                         </AlertDialogAction>
                       </AlertDialogFooter>
                     </AlertDialogContent>
@@ -319,24 +321,24 @@ const AdminHotmart = () => {
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{editing ? 'Editar assinatura' : 'Nova assinatura'}</DialogTitle>
+            <DialogTitle>{editing ? t('adminHotmart.dialogTitleEdit') : t('adminHotmart.dialogTitleNew')}</DialogTitle>
             <DialogDescription>
-              O acesso é liberado pelo e-mail. Use o mesmo e-mail que o usuário usa para logar.
+              {t('adminHotmart.dialogDesc')}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-3">
             <div>
-              <Label>E-mail *</Label>
+              <Label>{t('adminHotmart.fieldEmail')} *</Label>
               <Input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="cliente@email.com"
+                placeholder={t('adminHotmart.emailPlaceholder')}
               />
             </div>
             <div>
-              <Label>Status</Label>
+              <Label>{t('adminHotmart.fieldStatus')}</Label>
               <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v as HotmartStatus })}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
@@ -346,14 +348,14 @@ const AdminHotmart = () => {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label>Produto</Label>
+                <Label>{t('adminHotmart.fieldProduct')}</Label>
                 <Input
                   value={form.product_name}
                   onChange={(e) => setForm({ ...form, product_name: e.target.value })}
                 />
               </div>
               <div>
-                <Label>ID produto</Label>
+                <Label>{t('adminHotmart.fieldProductId')}</Label>
                 <Input
                   value={form.product_id}
                   onChange={(e) => setForm({ ...form, product_id: e.target.value })}
@@ -362,14 +364,14 @@ const AdminHotmart = () => {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label>Transação</Label>
+                <Label>{t('adminHotmart.fieldTransaction')}</Label>
                 <Input
                   value={form.transaction_id}
                   onChange={(e) => setForm({ ...form, transaction_id: e.target.value })}
                 />
               </div>
               <div>
-                <Label>Cód. assinante</Label>
+                <Label>{t('adminHotmart.fieldSubscriber')}</Label>
                 <Input
                   value={form.subscriber_code}
                   onChange={(e) => setForm({ ...form, subscriber_code: e.target.value })}
@@ -377,7 +379,7 @@ const AdminHotmart = () => {
               </div>
             </div>
             <div>
-              <Label>Data da compra</Label>
+              <Label>{t('adminHotmart.fieldPurchaseDate')}</Label>
               <Input
                 type="datetime-local"
                 value={form.purchase_date}
@@ -385,7 +387,7 @@ const AdminHotmart = () => {
               />
             </div>
             <div>
-              <Label>Próxima cobrança</Label>
+              <Label>{t('adminHotmart.fieldNextCharge')}</Label>
               <Input
                 type="datetime-local"
                 value={form.next_charge_date}
@@ -393,24 +395,24 @@ const AdminHotmart = () => {
               />
             </div>
             <div>
-              <Label>Expira em</Label>
+              <Label>{t('adminHotmart.fieldExpiresAt')}</Label>
               <Input
                 type="datetime-local"
                 value={form.expires_at}
                 onChange={(e) => setForm({ ...form, expires_at: e.target.value })}
               />
               <p className="text-[10px] text-muted-foreground mt-1">
-                Deixe vazio para acesso sem expiração (enquanto status = active).
+                {t('adminHotmart.expiresHint')}
               </p>
             </div>
           </div>
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={saving}>
-              Cancelar
+              {t('adminHotmart.cancel')}
             </Button>
             <Button onClick={save} disabled={saving}>
-              {saving ? 'Salvando...' : editing ? 'Salvar' : 'Criar'}
+              {saving ? t('adminHotmart.saving') : editing ? t('adminHotmart.save') : t('adminHotmart.create')}
             </Button>
           </DialogFooter>
         </DialogContent>

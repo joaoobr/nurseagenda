@@ -35,7 +35,9 @@
     "backToLogin": "Voltar para o login",
     "emailNotConfirmed": "E-mail não confirmado. Verifique sua caixa de entrada.",
     "hotmartTitle": "Já comprou na Hotmart?",
-    "hotmartHint": "Use o mesmo e-mail da compra para acessar seu plano automaticamente."
+    "hotmartHint": "Use o mesmo e-mail da compra para acessar seu plano automaticamente.",
+    "specialtyPlaceholder": "Ex: UTI, Emergência, Pediatria",
+    "comingSoon": "Funcionalidade em breve!"
   },
   "schedule": {
     "title": "Agenda de Plantões",
@@ -568,5 +570,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Assinaturas Hotmart",
+    "subtitle": "Gerencie manualmente o acesso por e-mail",
+    "searchPlaceholder": "Buscar por email, transação, produto...",
+    "allStatuses": "Todos os status",
+    "new": "Nova",
+    "noResults": "Nenhuma assinatura encontrada.",
+    "purchase": "Compra",
+    "nextCharge": "Próx. cobrança",
+    "expires": "Expira",
+    "edit": "Editar",
+    "removeTitle": "Remover assinatura?",
+    "removeDesc": "Esta ação remove o acesso de {{email}}. Não pode ser desfeita.",
+    "remove": "Remover",
+    "cancel": "Cancelar",
+    "dialogTitleEdit": "Editar assinatura",
+    "dialogTitleNew": "Nova assinatura",
+    "dialogDesc": "O acesso é liberado pelo e-mail. Use o mesmo e-mail que o usuário usa para logar.",
+    "fieldEmail": "E-mail",
+    "emailPlaceholder": "cliente@email.com",
+    "fieldStatus": "Status",
+    "fieldProduct": "Produto",
+    "fieldProductId": "ID produto",
+    "fieldTransaction": "Transação",
+    "fieldSubscriber": "Cód. assinante",
+    "fieldPurchaseDate": "Data da compra",
+    "fieldNextCharge": "Próxima cobrança",
+    "fieldExpiresAt": "Expira em",
+    "expiresHint": "Deixe vazio para acesso sem expiração (enquanto status = active).",
+    "save": "Salvar",
+    "create": "Criar",
+    "saving": "Salvando...",
+    "emailRequired": "E-mail é obrigatório",
+    "updated": "Assinatura atualizada",
+    "created": "Assinatura criada",
+    "removed": "Assinatura removida"
   }
 }

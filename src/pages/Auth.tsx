@@ -195,7 +195,7 @@ const Auth = () => {
                   id="specialty"
                   value={specialty}
                   onChange={(e) => setSpecialty(e.target.value)}
-                  placeholder="Ex: UTI, Emergência, Pediatria"
+                  placeholder={t('auth.specialtyPlaceholder')}
                 />
               </div>
               <div className="space-y-2">
@@ -250,7 +250,7 @@ const Auth = () => {
           {isLogin && (
             <button
               type="button"
-              onClick={() => toast.info('Funcionalidade em breve!')}
+              onClick={() => toast.info(t('auth.comingSoon'))}
               className="text-xs text-primary hover:underline"
             >
               {t('auth.forgotPassword')}
