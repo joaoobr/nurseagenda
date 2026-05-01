@@ -6,9 +6,11 @@ const TRIAL_DAYS = 3;
 
 interface SubscriptionInfo {
   subscribed: boolean;
-  productId: string | null;
-  priceId: string | null;
-  subscriptionEnd: string | null;
+  status: string | null;
+  productName: string | null;
+  subscriptionEnd: string | null; // expires_at
+  nextChargeDate: string | null;
+  purchaseDate: string | null;
 }
 
 interface AuthContextType {
@@ -19,16 +21,18 @@ interface AuthContextType {
   subscriptionLoading: boolean;
   trialDaysLeft: number;
   isTrialExpired: boolean;
-  hasAccess: boolean; // true if subscribed OR within trial
+  hasAccess: boolean;
   checkSubscription: () => Promise<void>;
   signOut: () => Promise<void>;
 }
 
 const defaultSubscription: SubscriptionInfo = {
   subscribed: false,
-  productId: null,
-  priceId: null,
+  status: null,
+  productName: null,
   subscriptionEnd: null,
+  nextChargeDate: null,
+  purchaseDate: null,
 };
 
 const AuthContext = createContext<AuthContextType>({
@@ -63,16 +67,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const checkSubscription = useCallback(async () => {
     try {
-      const { data, error } = await supabase.functions.invoke('check-subscription');
+      const { data, error } = await supabase.functions.invoke('check-hotmart-access');
       if (error) throw error;
       setSubscription({
         subscribed: data?.subscribed ?? false,
-        productId: data?.product_id ?? null,
-        priceId: data?.price_id ?? null,
-        subscriptionEnd: data?.subscription_end ?? null,
+        status: data?.status ?? null,
+        productName: data?.product_name ?? null,
+        subscriptionEnd: data?.expires_at ?? null,
+        nextChargeDate: data?.next_charge_date ?? null,
+        purchaseDate: data?.purchase_date ?? null,
       });
     } catch (err) {
-      console.error('Error checking subscription:', err);
+      console.error('Error checking Hotmart access:', err);
       setSubscription(defaultSubscription);
     } finally {
       setSubscriptionLoading(false);
