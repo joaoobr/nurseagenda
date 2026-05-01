@@ -23,6 +23,7 @@ import Notifications from "./pages/Notifications";
 import About from "./pages/About";
 import Checklists from "./pages/Checklists";
 import Admin from "./pages/Admin";
+import AdminHotmart from "./pages/AdminHotmart";
 import Subscription from "./pages/Subscription";
 import Studies from "./pages/Studies";
 import StudyTopic from "./pages/StudyTopic";
@@ -69,6 +70,7 @@ const App = () => (
                       <Route path="/notifications" element={<Notifications />} />
                       <Route path="/about" element={<About />} />
                       <Route path="/admin" element={<Admin />} />
+                      <Route path="/admin/hotmart" element={<AdminHotmart />} />
                       <Route path="/studies" element={<Studies />} />
                       <Route path="/studies/:topic" element={<StudyTopic />} />
 
