@@ -33,7 +33,9 @@
     "verifyEmail": "Verifica tu correo",
     "verifyEmailMessage": "Enviamos un enlace de confirmación a tu correo. Haz clic en el enlace para activar tu cuenta.",
     "backToLogin": "Volver al inicio de sesión",
-    "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada."
+    "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada.",
+    "hotmartTitle": "¿Ya compraste en Hotmart?",
+    "hotmartHint": "Usa el mismo correo de la compra para acceder a tu plan automáticamente."
   },
   "schedule": {
     "title": "Agenda de Turnos",
@@ -337,7 +339,9 @@
       "vitalSigns": "Signos vitales y gráficos",
       "calculator": "Calculadora de dosis",
       "priority": "Soporte prioritario"
-    }
+    },
+    "hotmartWarningTitle": "⚠️ Importante: usa el mismo correo",
+    "hotmartWarningBody": "Finaliza la compra en Hotmart con el correo {{email}}. El acceso se libera automáticamente tras la aprobación del pago."
   },
   "paywall": {
     "title": "Tu período de prueba ha expirado",
