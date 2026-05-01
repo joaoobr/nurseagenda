@@ -149,10 +149,13 @@ const Admin = () => {
         <Button variant="ghost" size="icon" onClick={() => navigate('/more')}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <div>
+        <div className="flex-1">
           <h1 className="text-2xl font-bold text-foreground">{t('admin.title')}</h1>
           <p className="text-sm text-muted-foreground">{t('admin.subtitle')}</p>
         </div>
+        <Button variant="outline" size="sm" className="gap-1" onClick={() => navigate('/admin/hotmart')}>
+          <CreditCard className="h-4 w-4" />Hotmart
+        </Button>
       </div>
 
       {/* Stats */}
