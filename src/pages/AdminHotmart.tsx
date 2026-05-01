@@ -39,7 +39,7 @@ interface HotmartSubscription {
   updated_at: string;
 }
 
-const STATUSES: HotmartStatus[] = ['active', 'pending', 'canceled', 'refunded', 'expired'];
+const STATUSES: HotmartStatus[] = ['active', 'canceled', 'refunded', 'expired', 'chargeback'];
 
 const toLocalInput = (iso: string | null) => {
   if (!iso) return '';
@@ -177,10 +177,10 @@ const AdminHotmart = () => {
   const statusBadge = (s: HotmartStatus) => {
     const map: Record<HotmartStatus, string> = {
       active: 'bg-green-500/10 text-green-600 border-green-200',
-      pending: 'bg-amber-500/10 text-amber-600 border-amber-200',
       canceled: 'bg-muted text-muted-foreground',
       refunded: 'bg-red-500/10 text-red-600 border-red-200',
       expired: 'bg-red-500/10 text-red-600 border-red-200',
+      chargeback: 'bg-amber-500/10 text-amber-600 border-amber-200',
     };
     return <Badge className={map[s]}>{s}</Badge>;
   };
