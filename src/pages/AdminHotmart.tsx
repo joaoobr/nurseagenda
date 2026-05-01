@@ -64,6 +64,7 @@ const emptyForm = {
 };
 
 const AdminHotmart = () => {
+  const { t } = useTranslation();
   const { isAdmin, loading: adminLoading } = useAdminCheck();
   const navigate = useNavigate();
   const [rows, setRows] = useState<HotmartSubscription[]>([]);
