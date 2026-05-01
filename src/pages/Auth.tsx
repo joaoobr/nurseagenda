@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { Stethoscope, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import { Stethoscope, Mail, Lock, User, Eye, EyeOff, ShoppingBag } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 import { Navigate } from 'react-router-dom';
 
