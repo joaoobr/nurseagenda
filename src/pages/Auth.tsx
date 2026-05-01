@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { Stethoscope, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import { Stethoscope, Mail, Lock, User, Eye, EyeOff, ShoppingBag } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 import { Navigate } from 'react-router-dom';
 
@@ -160,6 +160,15 @@ const Auth = () => {
           <h1 className="text-2xl font-bold text-foreground">{t('app.name')}</h1>
           <p className="text-sm text-muted-foreground mt-1">
             {isLogin ? t('auth.loginSubtitle') : t('auth.signupSubtitle')}
+          </p>
+        </div>
+
+        {/* Hotmart hint */}
+        <div className="w-full max-w-sm mb-4 p-3 rounded-lg border-2 border-primary/30 bg-primary/5 flex gap-2 items-start">
+          <ShoppingBag className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-foreground leading-relaxed">
+            <span className="font-semibold">Já comprou na Hotmart?</span>{' '}
+            Use o <span className="font-semibold text-primary">mesmo e-mail da compra</span> para acessar seu plano automaticamente.
           </p>
         </div>
 
