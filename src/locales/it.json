@@ -35,7 +35,9 @@
     "backToLogin": "Torna al login",
     "emailNotConfirmed": "Email non confermata. Controlla la tua casella di posta.",
     "hotmartTitle": "Hai già acquistato su Hotmart?",
-    "hotmartHint": "Usa la stessa email dell'acquisto per accedere automaticamente al tuo piano."
+    "hotmartHint": "Usa la stessa email dell'acquisto per accedere automaticamente al tuo piano.",
+    "specialtyPlaceholder": "Es.: TI, PS, Pediatria",
+    "comingSoon": "Prossimamente!"
   },
   "schedule": {
     "title": "Agenda dei Turni",
@@ -543,5 +545,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Abbonamenti Hotmart",
+    "subtitle": "Gestisci manualmente l'accesso tramite e-mail",
+    "searchPlaceholder": "Cerca per email, transazione, prodotto...",
+    "allStatuses": "Tutti gli stati",
+    "new": "Nuovo",
+    "noResults": "Nessun abbonamento trovato.",
+    "purchase": "Acquisto",
+    "nextCharge": "Prossimo addebito",
+    "expires": "Scade",
+    "edit": "Modifica",
+    "removeTitle": "Rimuovere l'abbonamento?",
+    "removeDesc": "Questo rimuove l'accesso di {{email}}. Non può essere annullato.",
+    "remove": "Rimuovi",
+    "cancel": "Annulla",
+    "dialogTitleEdit": "Modifica abbonamento",
+    "dialogTitleNew": "Nuovo abbonamento",
+    "dialogDesc": "L'accesso è abilitato dall'email. Usa la stessa email con cui l'utente accede.",
+    "fieldEmail": "Email",
+    "emailPlaceholder": "cliente@email.com",
+    "fieldStatus": "Stato",
+    "fieldProduct": "Prodotto",
+    "fieldProductId": "ID prodotto",
+    "fieldTransaction": "Transazione",
+    "fieldSubscriber": "Cod. abbonato",
+    "fieldPurchaseDate": "Data di acquisto",
+    "fieldNextCharge": "Prossimo addebito",
+    "fieldExpiresAt": "Scade il",
+    "expiresHint": "Lascia vuoto per accesso senza scadenza (finché stato = active).",
+    "save": "Salva",
+    "create": "Crea",
+    "saving": "Salvataggio...",
+    "emailRequired": "L'email è obbligatoria",
+    "updated": "Abbonamento aggiornato",
+    "created": "Abbonamento creato",
+    "removed": "Abbonamento rimosso"
   }
 }

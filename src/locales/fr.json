@@ -35,7 +35,9 @@
     "backToLogin": "Retour à la connexion",
     "emailNotConfirmed": "E-mail non confirmé. Veuillez vérifier votre boîte de réception.",
     "hotmartTitle": "Déjà acheté sur Hotmart ?",
-    "hotmartHint": "Utilisez le même e-mail que celui de l'achat pour accéder automatiquement à votre plan."
+    "hotmartHint": "Utilisez le même e-mail que celui de l'achat pour accéder automatiquement à votre plan.",
+    "specialtyPlaceholder": "Ex. : Réa, Urgences, Pédiatrie",
+    "comingSoon": "Bientôt disponible !"
   },
   "schedule": {
     "title": "Planning des Gardes",
@@ -543,5 +545,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Abonnements Hotmart",
+    "subtitle": "Gérez manuellement l'accès par e-mail",
+    "searchPlaceholder": "Rechercher par e-mail, transaction, produit...",
+    "allStatuses": "Tous les statuts",
+    "new": "Nouveau",
+    "noResults": "Aucun abonnement trouvé.",
+    "purchase": "Achat",
+    "nextCharge": "Prochain prélèvement",
+    "expires": "Expire",
+    "edit": "Modifier",
+    "removeTitle": "Supprimer l'abonnement ?",
+    "removeDesc": "Cela supprime l'accès de {{email}}. Cette action est irréversible.",
+    "remove": "Supprimer",
+    "cancel": "Annuler",
+    "dialogTitleEdit": "Modifier l'abonnement",
+    "dialogTitleNew": "Nouvel abonnement",
+    "dialogDesc": "L'accès est attribué par e-mail. Utilisez le même e-mail que celui de connexion.",
+    "fieldEmail": "E-mail",
+    "emailPlaceholder": "client@email.com",
+    "fieldStatus": "Statut",
+    "fieldProduct": "Produit",
+    "fieldProductId": "ID produit",
+    "fieldTransaction": "Transaction",
+    "fieldSubscriber": "Code abonné",
+    "fieldPurchaseDate": "Date d'achat",
+    "fieldNextCharge": "Prochain prélèvement",
+    "fieldExpiresAt": "Expire le",
+    "expiresHint": "Laissez vide pour un accès sans expiration (tant que statut = active).",
+    "save": "Enregistrer",
+    "create": "Créer",
+    "saving": "Enregistrement...",
+    "emailRequired": "L'e-mail est obligatoire",
+    "updated": "Abonnement mis à jour",
+    "created": "Abonnement créé",
+    "removed": "Abonnement supprimé"
   }
 }

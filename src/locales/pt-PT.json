@@ -35,7 +35,9 @@
     "backToLogin": "Voltar ao login",
     "emailNotConfirmed": "E-mail não confirmado. Verifique a sua caixa de entrada.",
     "hotmartTitle": "Já comprou na Hotmart?",
-    "hotmartHint": "Utilize o mesmo e-mail da compra para aceder ao seu plano automaticamente."
+    "hotmartHint": "Utilize o mesmo e-mail da compra para aceder ao seu plano automaticamente.",
+    "specialtyPlaceholder": "Ex: UCI, Urgência, Pediatria",
+    "comingSoon": "Funcionalidade em breve!"
   },
   "schedule": {
     "title": "Agenda de Turnos",
@@ -543,5 +545,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Subscrições Hotmart",
+    "subtitle": "Faça a gestão manual do acesso por e-mail",
+    "searchPlaceholder": "Procurar por email, transação, produto...",
+    "allStatuses": "Todos os estados",
+    "new": "Nova",
+    "noResults": "Nenhuma subscrição encontrada.",
+    "purchase": "Compra",
+    "nextCharge": "Próx. cobrança",
+    "expires": "Expira",
+    "edit": "Editar",
+    "removeTitle": "Remover subscrição?",
+    "removeDesc": "Esta ação remove o acesso de {{email}}. Não pode ser revertida.",
+    "remove": "Remover",
+    "cancel": "Cancelar",
+    "dialogTitleEdit": "Editar subscrição",
+    "dialogTitleNew": "Nova subscrição",
+    "dialogDesc": "O acesso é libertado pelo e-mail. Utilize o mesmo e-mail com que o utilizador faz login.",
+    "fieldEmail": "E-mail",
+    "emailPlaceholder": "cliente@email.com",
+    "fieldStatus": "Estado",
+    "fieldProduct": "Produto",
+    "fieldProductId": "ID produto",
+    "fieldTransaction": "Transação",
+    "fieldSubscriber": "Cód. subscritor",
+    "fieldPurchaseDate": "Data da compra",
+    "fieldNextCharge": "Próxima cobrança",
+    "fieldExpiresAt": "Expira em",
+    "expiresHint": "Deixe vazio para acesso sem expiração (enquanto estado = active).",
+    "save": "Guardar",
+    "create": "Criar",
+    "saving": "A guardar...",
+    "emailRequired": "E-mail é obrigatório",
+    "updated": "Subscrição atualizada",
+    "created": "Subscrição criada",
+    "removed": "Subscrição removida"
   }
 }

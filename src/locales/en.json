@@ -35,7 +35,9 @@
     "backToLogin": "Back to login",
     "emailNotConfirmed": "Email not confirmed. Please check your inbox.",
     "hotmartTitle": "Already purchased on Hotmart?",
-    "hotmartHint": "Use the same email from your purchase to access your plan automatically."
+    "hotmartHint": "Use the same email from your purchase to access your plan automatically.",
+    "specialtyPlaceholder": "e.g. ICU, ER, Pediatrics",
+    "comingSoon": "Coming soon!"
   },
   "schedule": {
     "title": "Shift Schedule",
@@ -568,5 +570,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Hotmart Subscriptions",
+    "subtitle": "Manually manage email-based access",
+    "searchPlaceholder": "Search by email, transaction, product...",
+    "allStatuses": "All statuses",
+    "new": "New",
+    "noResults": "No subscriptions found.",
+    "purchase": "Purchase",
+    "nextCharge": "Next charge",
+    "expires": "Expires",
+    "edit": "Edit",
+    "removeTitle": "Remove subscription?",
+    "removeDesc": "This removes access for {{email}}. Cannot be undone.",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "dialogTitleEdit": "Edit subscription",
+    "dialogTitleNew": "New subscription",
+    "dialogDesc": "Access is granted by email. Use the same email the user logs in with.",
+    "fieldEmail": "Email",
+    "emailPlaceholder": "customer@email.com",
+    "fieldStatus": "Status",
+    "fieldProduct": "Product",
+    "fieldProductId": "Product ID",
+    "fieldTransaction": "Transaction",
+    "fieldSubscriber": "Subscriber code",
+    "fieldPurchaseDate": "Purchase date",
+    "fieldNextCharge": "Next charge",
+    "fieldExpiresAt": "Expires at",
+    "expiresHint": "Leave empty for access without expiration (while status = active).",
+    "save": "Save",
+    "create": "Create",
+    "saving": "Saving...",
+    "emailRequired": "Email is required",
+    "updated": "Subscription updated",
+    "created": "Subscription created",
+    "removed": "Subscription removed"
   }
 }

@@ -35,7 +35,9 @@
     "backToLogin": "Volver al inicio de sesión",
     "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada.",
     "hotmartTitle": "¿Ya compraste en Hotmart?",
-    "hotmartHint": "Usa el mismo correo de la compra para acceder a tu plan automáticamente."
+    "hotmartHint": "Usa el mismo correo de la compra para acceder a tu plan automáticamente.",
+    "specialtyPlaceholder": "Ej.: UCI, Urgencias, Pediatría",
+    "comingSoon": "¡Próximamente!"
   },
   "schedule": {
     "title": "Agenda de Turnos",
@@ -543,5 +545,42 @@
         ]
       }
     }
+  },
+  "adminHotmart": {
+    "title": "Suscripciones Hotmart",
+    "subtitle": "Gestiona manualmente el acceso por correo",
+    "searchPlaceholder": "Buscar por correo, transacción, producto...",
+    "allStatuses": "Todos los estados",
+    "new": "Nueva",
+    "noResults": "No se encontraron suscripciones.",
+    "purchase": "Compra",
+    "nextCharge": "Próx. cobro",
+    "expires": "Caduca",
+    "edit": "Editar",
+    "removeTitle": "¿Eliminar suscripción?",
+    "removeDesc": "Esto elimina el acceso de {{email}}. No se puede deshacer.",
+    "remove": "Eliminar",
+    "cancel": "Cancelar",
+    "dialogTitleEdit": "Editar suscripción",
+    "dialogTitleNew": "Nueva suscripción",
+    "dialogDesc": "El acceso se libera por correo. Usa el mismo correo con el que el usuario inicia sesión.",
+    "fieldEmail": "Correo",
+    "emailPlaceholder": "cliente@correo.com",
+    "fieldStatus": "Estado",
+    "fieldProduct": "Producto",
+    "fieldProductId": "ID producto",
+    "fieldTransaction": "Transacción",
+    "fieldSubscriber": "Cód. suscriptor",
+    "fieldPurchaseDate": "Fecha de compra",
+    "fieldNextCharge": "Próximo cobro",
+    "fieldExpiresAt": "Caduca el",
+    "expiresHint": "Deja vacío para acceso sin caducidad (mientras estado = active).",
+    "save": "Guardar",
+    "create": "Crear",
+    "saving": "Guardando...",
+    "emailRequired": "El correo es obligatorio",
+    "updated": "Suscripción actualizada",
+    "created": "Suscripción creada",
+    "removed": "Suscripción eliminada"
   }
 }
