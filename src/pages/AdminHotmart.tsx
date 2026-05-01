@@ -115,7 +115,7 @@ const AdminHotmart = () => {
 
   const save = async () => {
     if (!form.email.trim()) {
-      toast.error('E-mail é obrigatório');
+      toast.error(t('adminHotmart.emailRequired'));
       return;
     }
     setSaving(true);
@@ -147,7 +147,7 @@ const AdminHotmart = () => {
       toast.error(error.message);
       return;
     }
-    toast.success(editing ? 'Assinatura atualizada' : 'Assinatura criada');
+    toast.success(editing ? t('adminHotmart.updated') : t('adminHotmart.created'));
     setDialogOpen(false);
     fetchRows();
   };
@@ -158,7 +158,7 @@ const AdminHotmart = () => {
       toast.error(error.message);
       return;
     }
-    toast.success('Assinatura removida');
+    toast.success(t('adminHotmart.removed'));
     fetchRows();
   };
 
